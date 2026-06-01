@@ -13,9 +13,10 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Zenit | SGQ, SGI, Compliance e PBQP-H",
+  title:
+      "ZÊNIT Consult | Consultoria Digital em Gestão Auditável, PBQP-H e ISO 9001",
   description:
-      "Consultoria especializada em sistemas de gestão, qualidade, compliance, SGQ, SGI e PBQP-H.",
+      "Consultoria digital em gestão auditável, ISO 9001, PBQP-H e Programa de Integridade para empresas em Fortaleza, Ceará e atendimento remoto.",
 };
 
 export default function RootLayout({
