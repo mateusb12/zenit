@@ -3,18 +3,30 @@ import type { ReactNode } from "react";
 const whatsappHref =
   "https://wa.me/5585999999999?text=Ol%C3%A1%2C%20estou%20no%20site%20da%20Z%C3%8ANIT%20e%20quero%20tirar%20uma%20d%C3%BAvida%20sobre%20consultoria%20digital%2C%20PBQP-H%2C%20ISO%209001%20ou%20Programa%20de%20Integridade.";
 
+const navItems = [
+  { href: "#inicio", label: "Início" },
+  { href: "#desafios", label: "Desafios" },
+  { href: "#solucoes", label: "Soluções" },
+  { href: "#metodologia", label: "Metodologia" },
+  { href: "#diagnostico", label: "Diagnóstico" },
+];
+
 const authorityItems = [
   {
     value: "15+",
-    label: "anos de experiência técnica em gestão, qualidade e auditorias",
+    label: "anos de experiência do consultor fundador",
   },
   {
     value: "10k+",
-    label: "horas dedicadas a consultorias, diagnósticos e implantação",
+    label: "horas em consultorias, auditorias, diagnósticos e implantação",
   },
   {
     value: "100%",
-    label: "atendimento digital, consultivo e orientado por evidências",
+    label: "atendimento digital, remoto e orientado por evidências",
+  },
+  {
+    value: "4",
+    label: "frentes de implantação: diagnóstico, estrutura, rotina e verificação",
   },
 ];
 
@@ -30,14 +42,14 @@ const challenges = [
       "As rotinas acontecem, mas sem padrão claro, responsável definido ou rastreabilidade.",
   },
   {
-    title: "Plano de ação parado",
+    title: "Falta de evidências",
     description:
-      "Pendências sem prazo, prioridade ou evidência de conclusão viram risco recorrente.",
+      "A empresa até executa atividades, mas não consegue comprovar de forma organizada.",
   },
   {
     title: "Risco em auditoria",
     description:
-      "Na hora de comprovar integridade, PBQP-H ou ISO 9001, a empresa descobre lacunas tarde demais.",
+      "Na hora de comprovar integridade, PBQP-H ou ISO 9001, as lacunas aparecem tarde demais.",
   },
 ];
 
@@ -46,23 +58,34 @@ const solutions = [
     number: "01",
     title: "Programa de Integridade para Licitações",
     description:
-      "Estruturação de políticas, matriz de riscos, canal de integridade, treinamentos, controles e evidências para empresas que precisam demonstrar compliance.",
-    tags: ["Integridade", "Compliance", "Licitações"],
+      "Políticas, matriz de riscos, canal de integridade, controles, registros e evidências para empresas que precisam demonstrar compliance.",
+    tags: ["Integridade", "Compliance", "CGU", "Licitações"],
   },
   {
     number: "02",
-    title: "PBQP-H Nível B para Construtoras",
+    title: "PBQP-H Nível B para Construção Civil",
     description:
-      "Implantação enxuta de processos, procedimentos, registros de obra, controle documental, plano de ação e evidências para construtoras pequenas e médias.",
-    tags: ["PBQP-H", "Obras", "Evidências"],
+      "Implantação enxuta de processos, procedimentos, registros de obra, controle documental e plano de ação para construtoras.",
+    tags: ["PBQP-H", "Obras", "Processos", "Evidências"],
   },
   {
     number: "03",
-    title: "ISO 9001 para Empresas",
+    title: "ISO 9001 para Empresas em Geral",
     description:
-      "Organização da gestão da qualidade com processos, indicadores, responsabilidades, auditoria interna, tratamento de não conformidades e melhoria contínua.",
-    tags: ["ISO 9001", "SGQ", "Auditoria"],
+      "Organização da gestão da qualidade com responsabilidades, indicadores, auditoria interna, tratamento de não conformidades e melhoria contínua.",
+    tags: ["ISO 9001", "SGQ", "Auditoria", "Qualidade"],
   },
+];
+
+const segments = [
+  "Construção civil",
+  "Indústria",
+  "Logística",
+  "Energia/eólica",
+  "Guindastes",
+  "Alimentos",
+  "Serviços",
+  "Outros segmentos",
 ];
 
 const methodSteps = [
@@ -82,7 +105,7 @@ const methodSteps = [
     step: "03",
     title: "Implantação",
     description:
-      "Acompanhamento digital, reuniões objetivas, treinamentos e ajustes conforme a realidade da empresa.",
+      "Acompanhamento digital, reuniões objetivas, materiais didáticos e treinamento da equipe quando necessário.",
   },
   {
     step: "04",
@@ -92,51 +115,74 @@ const methodSteps = [
   },
 ];
 
-const navItems = [
-  { href: "#inicio", label: "Início" },
-  { href: "#autoridade", label: "Autoridade" },
-  { href: "#desafios", label: "Desafios" },
-  { href: "#solucoes", label: "Soluções" },
-  { href: "#metodologia", label: "Metodologia" },
-];
-
 function Badge({
   children,
-  variant = "dark",
-}: Readonly<{ children: ReactNode; variant?: "dark" | "light" }>) {
+  tone = "light",
+}: Readonly<{ children: ReactNode; tone?: "light" | "dark" }>) {
+  const className =
+    tone === "dark"
+      ? "inline-flex w-fit rounded-full border border-[#cfe0ef] bg-[#e9f1f8] px-3 py-1.5 text-xs font-extrabold uppercase tracking-[0.08em] text-[#0e2a47]"
+      : "inline-flex w-fit rounded-full border border-white/20 bg-white/10 px-3 py-1.5 text-xs font-extrabold uppercase tracking-[0.08em] text-white/90";
+
+  return <span className={className}>{children}</span>;
+}
+
+function SectionHeading({
+  eyebrow,
+  title,
+  description,
+  inverted = false,
+}: Readonly<{
+  eyebrow: string;
+  title: string;
+  description: string;
+  inverted?: boolean;
+}>) {
   return (
-    <span
-      className={
-        variant === "light"
-          ? "inline-flex w-fit rounded-full border border-white/15 bg-white/10 px-3 py-1.5 text-xs font-extrabold uppercase tracking-[0.18em] text-white/85"
-          : "inline-flex w-fit rounded-full border border-sky-200 bg-sky-50 px-3 py-1.5 text-xs font-extrabold uppercase tracking-[0.18em] text-sky-950"
-      }
-    >
-      {children}
-    </span>
+    <div className="mx-auto mb-10 max-w-[760px] text-center md:mb-12">
+      <Badge tone={inverted ? "light" : "dark"}>{eyebrow}</Badge>
+      <h2
+        className={`mt-4 text-[clamp(1.875rem,4vw,2.875rem)] font-extrabold leading-[1.12] tracking-normal ${
+          inverted ? "text-white" : "text-[#111827]"
+        }`}
+      >
+        {title}
+      </h2>
+      <p
+        className={`mt-4 text-[1.03rem] leading-8 ${
+          inverted ? "text-white/72" : "text-[#4b5563]"
+        }`}
+      >
+        {description}
+      </p>
+    </div>
   );
 }
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-white text-slate-950">
-      <header className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-slate-950/90 backdrop-blur">
-        <div className="mx-auto flex h-20 max-w-6xl items-center justify-between gap-5 px-5">
-          <a href="#inicio" className="flex items-center gap-3 text-white">
-            <span className="grid h-11 w-11 place-items-center rounded-2xl border border-white/20 bg-white/10 font-bold shadow-lg shadow-sky-900/30">
+    <main className="min-h-screen overflow-x-hidden bg-white text-[#111827]">
+      <header className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-[#071a2e]/90 backdrop-blur-xl">
+        <div className="mx-auto flex h-[78px] w-[min(1160px,calc(100%_-_40px))] items-center justify-between gap-5">
+          <a
+            href="#inicio"
+            aria-label="ZÊNIT Consult"
+            className="flex min-w-max items-center gap-3 text-white"
+          >
+            <span className="grid h-[42px] w-[42px] place-items-center rounded-[14px] border border-white/20 bg-white/10 text-lg font-extrabold shadow-[0_14px_30px_rgba(58,110,165,0.24)]">
               Z
             </span>
             <span>
-              <strong className="block font-mono text-lg uppercase tracking-[0.16em]">
+              <strong className="block text-lg font-extrabold uppercase leading-none tracking-[0.04em]">
                 ZÊNIT
               </strong>
-              <span className="block text-xs uppercase tracking-[0.24em] text-white/60">
+              <span className="mt-1 block text-[11px] uppercase tracking-[0.12em] text-white/70">
                 Consult
               </span>
             </span>
           </a>
 
-          <nav className="hidden items-center gap-1 text-sm font-medium text-white/75 lg:flex">
+          <nav className="hidden items-center gap-1 text-sm font-semibold text-white/80 lg:flex">
             {navItems.map((item) => (
               <a
                 key={item.href}
@@ -149,187 +195,196 @@ export default function Home() {
           </nav>
 
           <a
-            href="#diagnostico"
-            className="rounded-full bg-white px-5 py-3 text-sm font-extrabold text-sky-950 shadow-lg shadow-black/10 transition hover:bg-sky-50"
+            href={whatsappHref}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex min-h-11 items-center justify-center rounded-full bg-[#25d366] px-5 py-3 text-sm font-extrabold text-white shadow-[0_14px_30px_rgba(37,211,102,0.18)] transition hover:-translate-y-0.5 hover:bg-[#1fb85a]"
           >
-            Diagnóstico
+            WhatsApp
           </a>
         </div>
       </header>
 
       <section
         id="inicio"
-        className="relative overflow-hidden bg-[radial-gradient(circle_at_80%_10%,rgba(56,189,248,0.25),transparent_35%),linear-gradient(135deg,#071a2e,#0e2a47)] px-5 pb-20 pt-36 text-white md:pb-28 md:pt-44"
+        className="relative min-h-screen scroll-mt-24 bg-[radial-gradient(circle_at_78%_16%,rgba(73,131,188,0.30),transparent_34%),linear-gradient(135deg,rgba(7,26,46,0.98),rgba(14,42,71,0.92)),#071a2e] px-5 pb-20 pt-36 text-white md:pb-24 md:pt-40"
       >
-        <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-[1.12fr_0.88fr] lg:items-center">
+        <div className="mx-auto grid w-full max-w-[1160px] items-center gap-12 lg:grid-cols-[minmax(0,1.08fr)_minmax(340px,0.92fr)]">
           <div>
-            <Badge variant="light">Consultoria digital em gestão auditável</Badge>
-            <h1 className="mt-6 max-w-4xl text-4xl font-extrabold leading-tight tracking-tight md:text-6xl">
+            <Badge>Consultoria digital em gestão auditável</Badge>
+            <h1 className="mt-6 max-w-[780px] text-[clamp(2.5rem,6vw,4.5rem)] font-extrabold leading-[1.08] tracking-normal">
               Qualidade, PBQP-H e integridade com método, documentos e
               evidências.
             </h1>
-            <p className="mt-6 max-w-2xl text-lg leading-8 text-white/78">
+            <p className="mt-6 max-w-[670px] text-lg leading-8 text-white/80">
               A ZÊNIT Consult ajuda empresas a organizar processos, controles e
               registros para ISO 9001, PBQP-H, Programa de Integridade,
               auditorias e exigências de mercado, com atendimento digital e
               implantação assistida.
             </p>
 
-            <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
               <a
                 href="#diagnostico"
-                className="rounded-full bg-white px-7 py-4 text-center font-extrabold text-sky-950 shadow-xl shadow-black/15 transition hover:-translate-y-0.5 hover:bg-sky-50"
+                className="inline-flex min-h-[46px] items-center justify-center rounded-full bg-white px-6 py-3 text-center text-sm font-extrabold text-[#0e2a47] shadow-[0_14px_30px_rgba(0,0,0,0.15)] transition hover:-translate-y-0.5 hover:bg-[#e9f1f8]"
               >
-                Solicitar diagnóstico inicial
+                Solicitar diagnóstico
               </a>
               <a
                 href={whatsappHref}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="rounded-full bg-emerald-400 px-7 py-4 text-center font-extrabold text-slate-950 shadow-xl shadow-emerald-900/20 transition hover:-translate-y-0.5 hover:bg-emerald-300"
+                className="inline-flex min-h-[46px] items-center justify-center rounded-full bg-[#25d366] px-6 py-3 text-center text-sm font-extrabold text-white shadow-[0_14px_30px_rgba(37,211,102,0.20)] transition hover:-translate-y-0.5 hover:bg-[#1fb85a]"
               >
                 Tirar dúvida pelo WhatsApp
               </a>
               <a
                 href="#metodologia"
-                className="rounded-full border border-white/25 px-7 py-4 text-center font-extrabold text-white transition hover:bg-white/10"
+                className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-white/30 bg-white/5 px-6 py-3 text-center text-sm font-extrabold text-white transition hover:-translate-y-0.5 hover:bg-white/10"
               >
                 Conhecer metodologia
               </a>
             </div>
+
+            <div className="mt-10 grid gap-3 md:grid-cols-3">
+              {["Programa de Integridade", "PBQP-H Nível B", "ISO 9001"].map(
+                (item) => (
+                  <div
+                    key={item}
+                    className="min-h-[108px] rounded-[18px] border border-white/15 bg-white/[0.08] p-5"
+                  >
+                    <strong className="block text-base">{item}</strong>
+                    <span className="mt-2 block text-sm leading-6 text-white/70">
+                      Implantação assistida com foco em rotina, documentos e
+                      evidências.
+                    </span>
+                  </div>
+                ),
+              )}
+            </div>
           </div>
 
-          <aside className="rounded-[2rem] border border-white/15 bg-white/10 p-5 shadow-2xl shadow-slate-950/25 backdrop-blur">
-            <div className="rounded-[1.5rem] bg-white p-6 text-slate-950">
-              <div className="flex items-start justify-between gap-4 border-b border-slate-200 pb-5">
+          <aside
+            aria-label="Resumo visual de gestão auditável"
+            className="rounded-[26px] border border-white/15 bg-white/10 p-5 shadow-[0_18px_46px_rgba(7,26,46,0.22)]"
+          >
+            <div className="rounded-[20px] bg-white/95 p-6 text-[#111827]">
+              <div className="flex items-start justify-between gap-4 border-b border-[#dbe3ec] pb-5">
                 <div>
                   <strong className="block text-lg">Gestão auditável</strong>
-                  <span className="text-sm text-slate-500">
+                  <span className="mt-1 block text-sm leading-6 text-[#4b5563]">
                     Documentos, ações e evidências no centro da implantação
                   </span>
                 </div>
-                <span className="rounded-full bg-emerald-50 px-3 py-1.5 text-xs font-extrabold text-emerald-700">
+                <span className="h-fit rounded-full bg-[#e6f7ed] px-3 py-1.5 text-xs font-extrabold text-[#13783a]">
                   MVP digital
                 </span>
               </div>
 
               <div className="mt-5 grid gap-3">
-                {["Diagnóstico", "Estrutura", "Evidências"].map(
-                  (item, index) => (
-                    <div
-                      key={item}
-                      className="grid grid-cols-[2.5rem_1fr_auto] items-center gap-3 rounded-2xl border border-slate-200 bg-slate-50 p-4"
-                    >
-                      <span className="grid h-10 w-10 place-items-center rounded-xl bg-sky-950 text-sm font-extrabold text-white">
-                        {String(index + 1).padStart(2, "0")}
-                      </span>
-                      <span>
-                        <strong className="block">{item}</strong>
-                        <small className="text-slate-500">
-                          {index === 0
-                            ? "Leitura inicial e prioridades"
-                            : index === 1
-                              ? "Processos, controles e responsáveis"
-                              : "Registros para comprovação"}
-                        </small>
-                      </span>
-                      <em className="text-xs font-extrabold not-italic text-sky-800">
-                        {index === 0 ? "priorizar" : index === 1 ? "organizar" : "provar"}
-                      </em>
-                    </div>
-                  ),
-                )}
+                {[
+                  ["01", "Diagnóstico", "Leitura inicial da maturidade e dos riscos", "priorizar"],
+                  ["02", "Estrutura", "Processos, documentos e responsáveis", "organizar"],
+                  ["03", "Evidências", "Registros para auditoria, licitação e gestão", "provar"],
+                ].map(([number, title, description, action]) => (
+                  <div
+                    key={number}
+                    className="grid grid-cols-[34px_1fr] gap-3 rounded-[14px] border border-[#e4eaf1] bg-[#f7f9fb] p-4 sm:grid-cols-[34px_1fr_auto] sm:items-center"
+                  >
+                    <b className="grid h-[34px] w-[34px] place-items-center rounded-[10px] bg-[#0e2a47] text-xs text-white">
+                      {number}
+                    </b>
+                    <span>
+                      <strong className="block text-sm">{title}</strong>
+                      <small className="text-[#4b5563]">{description}</small>
+                    </span>
+                    <em className="col-start-2 text-xs font-extrabold not-italic text-[#17456e] sm:col-start-auto">
+                      {action}
+                    </em>
+                  </div>
+                ))}
               </div>
             </div>
           </aside>
         </div>
       </section>
 
-      <section id="autoridade" className="bg-white px-5 py-16 text-slate-950">
-        <div className="mx-auto grid max-w-6xl gap-4 md:grid-cols-3">
+      <section className="bg-[#0e2a47] px-5 py-9 text-white">
+        <div className="mx-auto grid max-w-[1160px] gap-5 md:grid-cols-4">
           {authorityItems.map((item) => (
             <article
               key={item.value}
-              className="rounded-3xl border border-slate-200 bg-white p-7 shadow-sm"
+              className="rounded-[18px] border border-white/[0.14] bg-white/[0.08] p-5"
             >
-              <strong className="block text-4xl font-extrabold text-sky-950">
+              <strong className="block text-4xl font-extrabold leading-none">
                 {item.value}
               </strong>
-              <p className="mt-3 text-slate-600">{item.label}</p>
+              <span className="mt-3 block text-sm leading-6 text-white/76">
+                {item.label}
+              </span>
             </article>
           ))}
         </div>
       </section>
 
-      <section id="desafios" className="bg-slate-50 px-5 py-24">
-        <div className="mx-auto max-w-6xl">
-          <div className="mx-auto max-w-3xl text-center">
-            <Badge>Desafios</Badge>
-            <h2 className="mt-4 text-3xl font-extrabold tracking-tight md:text-5xl">
-              O problema não é só ter documentos. É conseguir comprovar a
-              gestão.
-            </h2>
-            <p className="mt-5 text-lg leading-8 text-slate-600">
-              Empresas pequenas e médias costumam operar com conhecimento
-              espalhado, controles informais e evidências difíceis de encontrar
-              quando surge uma auditoria, certificação ou licitação.
-            </p>
-          </div>
+      <section id="desafios" className="scroll-mt-24 bg-[#f5f7fa] px-5 py-[5.5rem] md:py-24">
+        <div className="mx-auto max-w-[1160px]">
+          <SectionHeading
+            eyebrow="Desafios"
+            title="O problema não é só ter documentos. É conseguir comprovar a gestão."
+            description="Empresas pequenas e médias costumam operar com conhecimento espalhado, controles informais e evidências difíceis de encontrar quando surge uma auditoria, certificação ou licitação."
+          />
 
-          <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
             {challenges.map((challenge, index) => (
               <article
                 key={challenge.title}
-                className="min-h-56 rounded-3xl border border-slate-200 bg-white p-6 shadow-sm"
+                className="min-h-[220px] rounded-[20px] border border-[#dbe3ec] bg-white p-6 shadow-[0_12px_30px_rgba(7,26,46,0.08)]"
               >
-                <span className="grid h-11 w-11 place-items-center rounded-2xl bg-sky-50 text-sm font-extrabold text-sky-950">
+                <span className="grid h-[42px] w-[42px] place-items-center rounded-[14px] bg-[#e9f1f8] text-sm font-extrabold text-[#0e2a47]">
                   {String(index + 1).padStart(2, "0")}
                 </span>
-                <h3 className="mt-5 text-xl font-extrabold">
+                <h3 className="mt-5 text-[19px] font-extrabold leading-tight">
                   {challenge.title}
                 </h3>
-                <p className="mt-3 text-slate-600">{challenge.description}</p>
+                <p className="mt-3 text-[15px] leading-7 text-[#4b5563]">
+                  {challenge.description}
+                </p>
               </article>
             ))}
           </div>
         </div>
       </section>
 
-      <section id="solucoes" className="bg-white px-5 py-24">
-        <div className="mx-auto max-w-6xl">
-          <div className="mx-auto max-w-3xl text-center">
-            <Badge>Soluções</Badge>
-            <h2 className="mt-4 text-3xl font-extrabold tracking-tight md:text-5xl">
-              Três frentes principais para organizar, implantar e comprovar.
-            </h2>
-            <p className="mt-5 text-lg leading-8 text-slate-600">
-              A consultoria é digital, objetiva e ajustada à realidade da
-              empresa. O foco é criar uma base auditável sem transformar a
-              implantação em um projeto pesado.
-            </p>
-          </div>
+      <section id="solucoes" className="scroll-mt-24 bg-white px-5 py-[5.5rem] md:py-24">
+        <div className="mx-auto max-w-[1160px]">
+          <SectionHeading
+            eyebrow="Soluções"
+            title="Três frentes principais para organizar, implantar e comprovar."
+            description="A consultoria é digital, objetiva e ajustada à realidade da empresa. O foco é criar uma base auditável sem transformar a implantação em um projeto pesado."
+          />
 
-          <div className="mt-12 grid gap-6 lg:grid-cols-3">
+          <div className="grid items-stretch gap-[18px] lg:grid-cols-3">
             {solutions.map((solution) => (
               <article
                 key={solution.title}
-                className="relative overflow-hidden rounded-3xl border border-slate-200 bg-white p-7 shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
+                className="relative flex min-h-[350px] flex-col overflow-hidden rounded-[20px] border border-[#dbe3ec] bg-white p-7 shadow-[0_12px_30px_rgba(7,26,46,0.08)] transition hover:-translate-y-0.5 hover:shadow-[0_18px_46px_rgba(7,26,46,0.14)]"
               >
-                <div className="absolute inset-x-0 top-0 h-1.5 bg-gradient-to-r from-sky-950 to-sky-700" />
-                <span className="grid h-12 w-12 place-items-center rounded-2xl bg-sky-950 text-sm font-extrabold text-white">
+                <div className="absolute inset-x-0 top-0 h-[5px] bg-[#0e2a47]" />
+                <span className="grid h-11 w-11 place-items-center rounded-[14px] bg-[#0e2a47] text-sm font-extrabold text-white">
                   {solution.number}
                 </span>
-                <h3 className="mt-6 text-2xl font-extrabold">
+                <h3 className="mt-6 text-2xl font-extrabold leading-tight">
                   {solution.title}
                 </h3>
-                <p className="mt-4 leading-7 text-slate-600">
+                <p className="mt-4 flex-1 text-[15px] leading-7 text-[#4b5563]">
                   {solution.description}
                 </p>
                 <div className="mt-6 flex flex-wrap gap-2">
                   {solution.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="rounded-full bg-sky-50 px-3 py-1.5 text-xs font-extrabold text-sky-950"
+                      className="rounded-full bg-[#e9f1f8] px-3 py-1.5 text-xs font-extrabold text-[#0e2a47]"
                     >
                       {tag}
                     </span>
@@ -339,18 +394,20 @@ export default function Home() {
             ))}
           </div>
 
-          <div className="mt-6 grid gap-5 rounded-3xl bg-sky-950 p-7 text-white shadow-xl shadow-sky-950/20 md:grid-cols-[1fr_auto] md:items-center">
+          <div className="mt-5 grid gap-5 rounded-[20px] bg-[#0e2a47] p-6 text-white shadow-[0_18px_46px_rgba(7,26,46,0.14)] md:grid-cols-[1fr_auto] md:items-center">
             <div>
-              <h3 className="text-2xl font-extrabold">Soluções digitais sob demanda</h3>
-              <p className="mt-2 max-w-3xl text-white/72">
-                Ferramentas simples para organizar planos de ação, evidências,
-                formulários, documentos, dashboards e acompanhamento da
-                implantação, sem vender uma plataforma grande antes da hora.
+              <h3 className="text-2xl font-extrabold">
+                Apoios sob demanda
+              </h3>
+              <p className="mt-2 max-w-3xl leading-7 text-white/74">
+                Auditoria interna, materiais didáticos, treinamento da equipe e
+                soluções digitais simples para acompanhar documentos, ações e
+                evidências quando fizer sentido no diagnóstico.
               </p>
             </div>
             <a
               href="#diagnostico"
-              className="rounded-full bg-white px-6 py-3 text-center font-extrabold text-sky-950 transition hover:bg-sky-50"
+              className="inline-flex min-h-[46px] items-center justify-center rounded-full bg-white px-6 py-3 text-center text-sm font-extrabold text-[#0e2a47] transition hover:bg-[#e9f1f8]"
             >
               Avaliar necessidade
             </a>
@@ -358,66 +415,87 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="metodologia" className="bg-slate-950 px-5 py-24 text-white">
-        <div className="mx-auto max-w-6xl">
-          <div className="mx-auto max-w-3xl text-center">
-            <Badge variant="light">Metodologia</Badge>
-            <h2 className="mt-4 text-3xl font-extrabold tracking-tight md:text-5xl">
-              Uma jornada simples para sair da informalidade e chegar à
-              evidência.
-            </h2>
-            <p className="mt-5 text-lg leading-8 text-white/68">
-              A metodologia mostra o caminho de implantação sem expor
-              complexidade técnica desnecessária. O cliente entende etapas,
-              responsabilidades e próximos passos.
-            </p>
+      <section className="bg-[#f5f7fa] px-5 py-14">
+        <div className="mx-auto max-w-[1160px]">
+          <div className="grid gap-6 rounded-[20px] border border-[#dbe3ec] bg-white p-6 shadow-[0_12px_30px_rgba(7,26,46,0.08)] lg:grid-cols-[0.48fr_1fr] lg:items-center">
+            <div>
+              <Badge tone="dark">Segmentos atendidos</Badge>
+              <h2 className="mt-4 text-2xl font-extrabold leading-tight text-[#111827]">
+                Experiência em diferentes operações e níveis de maturidade.
+              </h2>
+            </div>
+            <div className="flex flex-wrap gap-3">
+              {segments.map((segment) => (
+                <span
+                  key={segment}
+                  className="rounded-full border border-[#dbe3ec] bg-[#f7f9fb] px-4 py-2 text-sm font-extrabold text-[#17456e]"
+                >
+                  {segment}
+                </span>
+              ))}
+            </div>
           </div>
+        </div>
+      </section>
 
-          <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+      <section
+        id="metodologia"
+        className="scroll-mt-24 bg-[#071a2e] px-5 py-[5.5rem] text-white md:py-24"
+      >
+        <div className="mx-auto max-w-[1160px]">
+          <SectionHeading
+            eyebrow="Metodologia"
+            title="Uma jornada simples para sair da informalidade e chegar à evidência."
+            description="A metodologia mostra o caminho de implantação sem expor complexidade técnica desnecessária. O cliente entende etapas, responsabilidades e próximos passos."
+            inverted
+          />
+
+          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
             {methodSteps.map((item) => (
               <article
                 key={item.step}
-                className="min-h-60 rounded-3xl border border-white/10 bg-white/5 p-6"
+                className="min-h-[230px] rounded-[20px] border border-white/15 bg-white/[0.08] p-6"
               >
-                <span className="text-sm font-extrabold text-sky-200">
+                <span className="text-sm font-extrabold text-[#b8d8f3]">
                   {item.step}
                 </span>
-                <h3 className="mt-5 text-xl font-extrabold">{item.title}</h3>
-                <p className="mt-3 text-white/68">{item.description}</p>
+                <h3 className="mt-5 text-xl font-extrabold leading-tight">
+                  {item.title}
+                </h3>
+                <p className="mt-3 text-[15px] leading-7 text-white/72">
+                  {item.description}
+                </p>
               </article>
             ))}
           </div>
         </div>
       </section>
 
-      <section id="diagnostico" className="bg-slate-50 px-5 py-24">
-        <div className="mx-auto grid max-w-6xl gap-7 lg:grid-cols-[0.9fr_1.1fr]">
-          <aside className="rounded-3xl bg-sky-950 p-8 text-white shadow-xl shadow-sky-950/20">
-            <Badge variant="light">Diagnóstico inicial</Badge>
-            <h2 className="mt-4 text-3xl font-extrabold tracking-tight md:text-5xl">
+      <section id="diagnostico" className="scroll-mt-24 bg-[#f5f7fa] px-5 py-[5.5rem] md:py-24">
+        <div className="mx-auto grid max-w-[1160px] items-start gap-7 lg:grid-cols-[0.9fr_1.1fr]">
+          <aside className="rounded-[24px] bg-[#0e2a47] p-8 text-white shadow-[0_18px_46px_rgba(7,26,46,0.14)]">
+            <Badge>Diagnóstico inicial</Badge>
+            <h2 className="mt-4 text-[clamp(1.875rem,4vw,2.625rem)] font-extrabold leading-[1.12]">
               Quer saber por onde começar?
             </h2>
-            <p className="mt-5 leading-8 text-white/72">
-              Envie os dados essenciais para uma primeira leitura da necessidade.
-              Se preferir, fale direto pelo WhatsApp e explique o contexto em
-              poucas mensagens.
+            <p className="mt-4 leading-8 text-white/76">
+              Envie os dados essenciais para uma primeira leitura da
+              necessidade. Se preferir, fale direto pelo WhatsApp e explique o
+              contexto em poucas mensagens.
             </p>
 
-            <div className="mt-7 grid gap-3">
+            <div className="my-6 grid gap-3">
               {[
                 ["Base", "Fortaleza · Ceará"],
                 ["Atendimento", "Digital, remoto e consultivo"],
-                [
-                  "Foco",
-                  "Integridade, PBQP-H, ISO 9001, auditoria e gestão auditável",
-                ],
+                ["Foco", "Integridade, PBQP-H, ISO 9001, auditoria e gestão auditável"],
               ].map(([title, text]) => (
                 <div
                   key={title}
-                  className="rounded-2xl border border-white/10 bg-white/10 p-4"
+                  className="rounded-2xl border border-white/[0.12] bg-white/[0.08] p-4"
                 >
                   <strong className="block">{title}</strong>
-                  <span className="text-sm text-white/68">{text}</span>
+                  <span className="text-sm leading-6 text-white/72">{text}</span>
                 </div>
               ))}
             </div>
@@ -426,7 +504,7 @@ export default function Home() {
               href={whatsappHref}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-7 inline-flex w-full justify-center rounded-full bg-emerald-400 px-7 py-4 text-center font-extrabold text-slate-950 transition hover:bg-emerald-300 sm:w-auto"
+              className="inline-flex min-h-[46px] w-full items-center justify-center rounded-full bg-[#25d366] px-6 py-3 text-center text-sm font-extrabold text-white transition hover:bg-[#1fb85a] sm:w-auto"
             >
               Tirar dúvida pelo WhatsApp
             </a>
@@ -436,24 +514,24 @@ export default function Home() {
             action="mailto:contato@zenitconsult.com.br"
             method="post"
             encType="text/plain"
-            className="rounded-3xl border border-slate-200 bg-white p-7 shadow-xl shadow-slate-950/10"
+            className="rounded-[24px] border border-[#dbe3ec] bg-white p-7 shadow-[0_18px_46px_rgba(7,26,46,0.14)]"
           >
-            <h3 className="text-2xl font-extrabold md:text-3xl">
+            <h3 className="text-2xl font-extrabold leading-tight md:text-[1.625rem]">
               Solicitar diagnóstico inicial
             </h3>
-            <p className="mt-3 text-slate-600">
+            <p className="mt-2 leading-7 text-[#4b5563]">
               Formulário enxuto para gerar o primeiro contato comercial e
               direcionar a solução mais adequada.
             </p>
 
-            <div className="mt-7 grid gap-4 md:grid-cols-2">
+            <div className="mt-6 grid gap-4 md:grid-cols-2">
               <label className="grid gap-2 text-sm font-extrabold">
                 Nome
                 <input
                   required
                   name="nome"
                   placeholder="Seu nome"
-                  className="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 font-normal outline-none transition focus:border-sky-700 focus:ring-4 focus:ring-sky-100"
+                  className="min-h-[48px] rounded-[14px] border border-[#dbe3ec] bg-[#f7f9fb] px-4 py-3 font-normal outline-none transition focus:border-[#17456e] focus:ring-4 focus:ring-[#e9f1f8]"
                 />
               </label>
               <label className="grid gap-2 text-sm font-extrabold">
@@ -462,7 +540,7 @@ export default function Home() {
                   required
                   name="empresa"
                   placeholder="Nome da empresa"
-                  className="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 font-normal outline-none transition focus:border-sky-700 focus:ring-4 focus:ring-sky-100"
+                  className="min-h-[48px] rounded-[14px] border border-[#dbe3ec] bg-[#f7f9fb] px-4 py-3 font-normal outline-none transition focus:border-[#17456e] focus:ring-4 focus:ring-[#e9f1f8]"
                 />
               </label>
               <label className="grid gap-2 text-sm font-extrabold">
@@ -471,7 +549,7 @@ export default function Home() {
                   required
                   name="whatsapp"
                   placeholder="(00) 00000-0000"
-                  className="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 font-normal outline-none transition focus:border-sky-700 focus:ring-4 focus:ring-sky-100"
+                  className="min-h-[48px] rounded-[14px] border border-[#dbe3ec] bg-[#f7f9fb] px-4 py-3 font-normal outline-none transition focus:border-[#17456e] focus:ring-4 focus:ring-[#e9f1f8]"
                 />
               </label>
               <label className="grid gap-2 text-sm font-extrabold">
@@ -480,7 +558,7 @@ export default function Home() {
                   type="email"
                   name="email"
                   placeholder="seuemail@empresa.com.br"
-                  className="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 font-normal outline-none transition focus:border-sky-700 focus:ring-4 focus:ring-sky-100"
+                  className="min-h-[48px] rounded-[14px] border border-[#dbe3ec] bg-[#f7f9fb] px-4 py-3 font-normal outline-none transition focus:border-[#17456e] focus:ring-4 focus:ring-[#e9f1f8]"
                 />
               </label>
               <label className="grid gap-2 text-sm font-extrabold">
@@ -488,7 +566,7 @@ export default function Home() {
                 <select
                   required
                   name="segmento"
-                  className="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 font-normal outline-none transition focus:border-sky-700 focus:ring-4 focus:ring-sky-100"
+                  className="min-h-[48px] rounded-[14px] border border-[#dbe3ec] bg-[#f7f9fb] px-4 py-3 font-normal outline-none transition focus:border-[#17456e] focus:ring-4 focus:ring-[#e9f1f8]"
                   defaultValue=""
                 >
                   <option value="" disabled>
@@ -498,7 +576,8 @@ export default function Home() {
                   <option>Empresa que participa de licitações</option>
                   <option>Serviços</option>
                   <option>Indústria</option>
-                  <option>Pequena ou média empresa</option>
+                  <option>Logística</option>
+                  <option>Energia/eólica</option>
                   <option>Outro</option>
                 </select>
               </label>
@@ -507,7 +586,7 @@ export default function Home() {
                 <select
                   required
                   name="necessidade"
-                  className="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 font-normal outline-none transition focus:border-sky-700 focus:ring-4 focus:ring-sky-100"
+                  className="min-h-[48px] rounded-[14px] border border-[#dbe3ec] bg-[#f7f9fb] px-4 py-3 font-normal outline-none transition focus:border-[#17456e] focus:ring-4 focus:ring-[#e9f1f8]"
                   defaultValue=""
                 >
                   <option value="" disabled>
@@ -517,7 +596,7 @@ export default function Home() {
                   <option>PBQP-H</option>
                   <option>ISO 9001</option>
                   <option>Auditoria interna</option>
-                  <option>Treinamentos</option>
+                  <option>Treinamento dentro da implantação</option>
                   <option>Soluções digitais sob demanda</option>
                   <option>Ainda não sei</option>
                 </select>
@@ -527,7 +606,7 @@ export default function Home() {
                 <textarea
                   name="mensagem"
                   placeholder="Conte brevemente o que sua empresa precisa resolver."
-                  className="min-h-32 rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 font-normal outline-none transition focus:border-sky-700 focus:ring-4 focus:ring-sky-100"
+                  className="min-h-32 rounded-[14px] border border-[#dbe3ec] bg-[#f7f9fb] px-4 py-3 font-normal outline-none transition focus:border-[#17456e] focus:ring-4 focus:ring-[#e9f1f8]"
                 />
               </label>
             </div>
@@ -535,25 +614,26 @@ export default function Home() {
             <div className="mt-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
               <button
                 type="submit"
-                className="rounded-full bg-sky-950 px-7 py-4 font-extrabold text-white transition hover:bg-sky-800"
+                className="inline-flex min-h-[46px] items-center justify-center rounded-full bg-[#0e2a47] px-6 py-3 text-sm font-extrabold text-white transition hover:bg-[#17456e]"
               >
                 Enviar solicitação
               </button>
-              <span className="text-sm text-slate-500">
-                Conectar depois ao WhatsApp, CRM ou e-mail real.
+              <span className="text-sm leading-6 text-[#4b5563]">
+                Formulário temporário via e-mail até conexão com CRM ou
+                WhatsApp real.
               </span>
             </div>
           </form>
         </div>
       </section>
 
-      <footer className="bg-slate-950 px-5 py-12 text-white">
-        <div className="mx-auto grid max-w-6xl gap-8 md:grid-cols-[1.3fr_0.8fr_0.9fr]">
+      <footer className="bg-[#071a2e] px-5 py-12 text-white">
+        <div className="mx-auto grid max-w-[1160px] gap-8 md:grid-cols-[1.3fr_0.8fr_0.9fr]">
           <div>
-            <strong className="block text-lg uppercase tracking-[0.16em]">
+            <strong className="block text-lg font-extrabold uppercase tracking-[0.08em]">
               ZÊNIT Consult
             </strong>
-            <p className="mt-4 max-w-md text-white/68">
+            <p className="mt-4 max-w-md leading-7 text-white/68">
               Consultoria digital em gestão auditável, qualidade, PBQP-H, ISO
               9001 e Programa de Integridade.
             </p>
@@ -569,15 +649,15 @@ export default function Home() {
                   {item.label}
                 </a>
               ))}
-              <a href="#diagnostico" className="hover:text-white">
-                Diagnóstico
-              </a>
             </div>
           </div>
           <div>
             <h4 className="font-extrabold">Contato</h4>
             <div className="mt-3 grid gap-2 text-white/68">
-              <a href="mailto:contato@zenitconsult.com.br" className="hover:text-white">
+              <a
+                href="mailto:contato@zenitconsult.com.br"
+                className="hover:text-white"
+              >
                 contato@zenitconsult.com.br
               </a>
               <a
