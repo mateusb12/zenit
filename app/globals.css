@@ -1,20 +1,9 @@
 @import "tailwindcss";
+@import "../styles/zenit.css";
 
 :root {
-  --azul: #0e2a47;
-  --azul-profundo: #071a2e;
-  --azul-apoio: #3a6ea5;
-  --azul-medio: #17456e;
-  --azul-claro: #e9f1f8;
-  --verde: #25d366;
-  --verde-escuro: #1fb85a;
-  --cinza-claro: #f5f7fa;
-  --cinza-borda: #d9dee5;
-  --texto: #111111;
-  --texto-sec: #4b5563;
-  --branco: #ffffff;
-  --background: var(--branco);
-  --foreground: var(--texto);
+  --background: var(--zenit-white);
+  --foreground: var(--zenit-text);
 }
 
 @theme inline {
