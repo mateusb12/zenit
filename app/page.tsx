@@ -121,8 +121,8 @@ function Badge({
 }: Readonly<{ children: ReactNode; tone?: "light" | "dark" }>) {
   const className =
     tone === "dark"
-      ? "inline-flex w-fit rounded-full border border-[#cfe0ef] bg-[#e9f1f8] px-3 py-1.5 text-xs font-extrabold uppercase tracking-[0.08em] text-[#0e2a47]"
-      : "inline-flex w-fit rounded-full border border-white/20 bg-white/10 px-3 py-1.5 text-xs font-extrabold uppercase tracking-[0.08em] text-white/90";
+      ? "inline-flex w-fit rounded-full border border-[var(--cinza-borda)] bg-[var(--azul-claro)] px-3 py-1.5 text-xs font-extrabold uppercase tracking-[0.08em] text-[var(--azul)]"
+      : "inline-flex w-fit rounded-full border border-white/20 bg-white/10 px-3 py-1.5 text-xs font-extrabold uppercase tracking-[0.08em] text-white";
 
   return <span className={className}>{children}</span>;
 }
@@ -143,14 +143,14 @@ function SectionHeading({
       <Badge tone={inverted ? "light" : "dark"}>{eyebrow}</Badge>
       <h2
         className={`mt-4 text-[clamp(1.875rem,4vw,2.875rem)] font-extrabold leading-[1.12] tracking-normal ${
-          inverted ? "text-white" : "text-[#111827]"
+          inverted ? "text-white" : "text-[var(--texto)]"
         }`}
       >
         {title}
       </h2>
       <p
         className={`mt-4 text-[1.03rem] leading-8 ${
-          inverted ? "text-white/72" : "text-[#4b5563]"
+          inverted ? "text-white/75" : "text-[var(--texto-sec)]"
         }`}
       >
         {description}
@@ -161,15 +161,15 @@ function SectionHeading({
 
 export default function Home() {
   return (
-    <main className="min-h-screen overflow-x-hidden bg-white text-[#111827]">
-      <header className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-[#071a2e]/90 backdrop-blur-xl">
+    <main className="min-h-screen overflow-x-hidden bg-[var(--branco)] text-[var(--texto)]">
+      <header className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-[rgba(7,26,46,0.92)] backdrop-blur-xl">
         <div className="mx-auto flex h-[78px] w-[min(1160px,calc(100%_-_40px))] items-center justify-between gap-5">
           <a
             href="#inicio"
             aria-label="ZÊNIT Consult"
             className="flex min-w-max items-center gap-3 text-white"
           >
-            <span className="grid h-[42px] w-[42px] place-items-center rounded-[14px] border border-white/20 bg-white/10 text-lg font-extrabold shadow-[0_14px_30px_rgba(58,110,165,0.24)]">
+            <span className="grid h-[42px] w-[42px] place-items-center rounded-[14px] border border-white/20 bg-[linear-gradient(135deg,rgba(255,255,255,0.18),rgba(58,110,165,0.58))] text-lg font-extrabold shadow-[0_14px_30px_rgba(58,110,165,0.24)]">
               Z
             </span>
             <span>
@@ -198,7 +198,7 @@ export default function Home() {
             href={whatsappHref}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex min-h-11 items-center justify-center rounded-full bg-[#25d366] px-5 py-3 text-sm font-extrabold text-white shadow-[0_14px_30px_rgba(37,211,102,0.18)] transition hover:-translate-y-0.5 hover:bg-[#1fb85a]"
+            className="inline-flex min-h-11 items-center justify-center rounded-full bg-[var(--verde)] px-5 py-3 text-sm font-extrabold text-white shadow-[0_14px_30px_rgba(37,211,102,0.18)] transition hover:-translate-y-0.5 hover:bg-[var(--verde-escuro)]"
           >
             WhatsApp
           </a>
@@ -207,7 +207,7 @@ export default function Home() {
 
       <section
         id="inicio"
-        className="relative min-h-screen scroll-mt-24 bg-[radial-gradient(circle_at_78%_16%,rgba(73,131,188,0.30),transparent_34%),linear-gradient(135deg,rgba(7,26,46,0.98),rgba(14,42,71,0.92)),#071a2e] px-5 pb-20 pt-36 text-white md:pb-24 md:pt-40"
+        className="relative min-h-screen scroll-mt-[92px] bg-[radial-gradient(circle_at_78%_16%,rgba(73,131,188,0.30),transparent_34%),linear-gradient(135deg,rgba(7,26,46,0.98),rgba(14,42,71,0.92)),var(--azul-profundo)] px-5 pb-20 pt-36 text-white md:pb-24 md:pt-40"
       >
         <div className="mx-auto grid w-full max-w-[1160px] items-center gap-12 lg:grid-cols-[minmax(0,1.08fr)_minmax(340px,0.92fr)]">
           <div>
@@ -226,7 +226,7 @@ export default function Home() {
             <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
               <a
                 href="#diagnostico"
-                className="inline-flex min-h-[46px] items-center justify-center rounded-full bg-white px-6 py-3 text-center text-sm font-extrabold text-[#0e2a47] shadow-[0_14px_30px_rgba(0,0,0,0.15)] transition hover:-translate-y-0.5 hover:bg-[#e9f1f8]"
+                className="inline-flex min-h-[46px] items-center justify-center rounded-full bg-[var(--branco)] px-6 py-3 text-center text-sm font-extrabold text-[var(--azul)] shadow-[0_14px_30px_rgba(0,0,0,0.15)] transition hover:-translate-y-0.5 hover:bg-[var(--azul-claro)]"
               >
                 Solicitar diagnóstico
               </a>
@@ -234,7 +234,7 @@ export default function Home() {
                 href={whatsappHref}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex min-h-[46px] items-center justify-center rounded-full bg-[#25d366] px-6 py-3 text-center text-sm font-extrabold text-white shadow-[0_14px_30px_rgba(37,211,102,0.20)] transition hover:-translate-y-0.5 hover:bg-[#1fb85a]"
+                className="inline-flex min-h-[46px] items-center justify-center rounded-full bg-[var(--verde)] px-6 py-3 text-center text-sm font-extrabold text-white shadow-[0_14px_30px_rgba(37,211,102,0.20)] transition hover:-translate-y-0.5 hover:bg-[var(--verde-escuro)]"
               >
                 Tirar dúvida pelo WhatsApp
               </a>
@@ -268,11 +268,11 @@ export default function Home() {
             aria-label="Resumo visual de gestão auditável"
             className="rounded-[26px] border border-white/15 bg-white/10 p-5 shadow-[0_18px_46px_rgba(7,26,46,0.22)]"
           >
-            <div className="rounded-[20px] bg-white/95 p-6 text-[#111827]">
-              <div className="flex items-start justify-between gap-4 border-b border-[#dbe3ec] pb-5">
+            <div className="rounded-[20px] bg-[rgba(255,255,255,0.96)] p-6 text-[var(--texto)]">
+              <div className="flex items-start justify-between gap-4 border-b border-[var(--cinza-borda)] pb-5">
                 <div>
                   <strong className="block text-lg">Gestão auditável</strong>
-                  <span className="mt-1 block text-sm leading-6 text-[#4b5563]">
+                  <span className="mt-1 block text-sm leading-6 text-[var(--texto-sec)]">
                     Documentos, ações e evidências no centro da implantação
                   </span>
                 </div>
@@ -291,14 +291,14 @@ export default function Home() {
                     key={number}
                     className="grid grid-cols-[34px_1fr] gap-3 rounded-[14px] border border-[#e4eaf1] bg-[#f7f9fb] p-4 sm:grid-cols-[34px_1fr_auto] sm:items-center"
                   >
-                    <b className="grid h-[34px] w-[34px] place-items-center rounded-[10px] bg-[#0e2a47] text-xs text-white">
+                    <b className="grid h-[34px] w-[34px] place-items-center rounded-[10px] bg-[var(--azul)] text-xs text-white">
                       {number}
                     </b>
                     <span>
                       <strong className="block text-sm">{title}</strong>
-                      <small className="text-[#4b5563]">{description}</small>
+                      <small className="text-[var(--texto-sec)]">{description}</small>
                     </span>
-                    <em className="col-start-2 text-xs font-extrabold not-italic text-[#17456e] sm:col-start-auto">
+                    <em className="col-start-2 text-xs font-extrabold not-italic text-[var(--azul-medio)] sm:col-start-auto">
                       {action}
                     </em>
                   </div>
@@ -309,7 +309,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="bg-[#0e2a47] px-5 py-9 text-white">
+      <section className="bg-[var(--azul)] px-5 py-9 text-white">
         <div className="mx-auto grid max-w-[1160px] gap-5 md:grid-cols-4">
           {authorityItems.map((item) => (
             <article
@@ -319,7 +319,7 @@ export default function Home() {
               <strong className="block text-4xl font-extrabold leading-none">
                 {item.value}
               </strong>
-              <span className="mt-3 block text-sm leading-6 text-white/76">
+              <span className="mt-3 block text-sm leading-6 text-white/75">
                 {item.label}
               </span>
             </article>
@@ -327,7 +327,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="desafios" className="scroll-mt-24 bg-[#f5f7fa] px-5 py-[5.5rem] md:py-24">
+      <section id="desafios" className="scroll-mt-[92px] bg-[var(--cinza-claro)] px-5 py-[5.5rem] md:py-24">
         <div className="mx-auto max-w-[1160px]">
           <SectionHeading
             eyebrow="Desafios"
@@ -339,15 +339,15 @@ export default function Home() {
             {challenges.map((challenge, index) => (
               <article
                 key={challenge.title}
-                className="min-h-[220px] rounded-[20px] border border-[#dbe3ec] bg-white p-6 shadow-[0_12px_30px_rgba(7,26,46,0.08)]"
+                className="min-h-[220px] rounded-[20px] border border-[var(--cinza-borda)] bg-[var(--branco)] p-6 shadow-[0_12px_30px_rgba(7,26,46,0.08)]"
               >
-                <span className="grid h-[42px] w-[42px] place-items-center rounded-[14px] bg-[#e9f1f8] text-sm font-extrabold text-[#0e2a47]">
+                <span className="grid h-[42px] w-[42px] place-items-center rounded-[14px] bg-[var(--azul-claro)] text-sm font-extrabold text-[var(--azul)]">
                   {String(index + 1).padStart(2, "0")}
                 </span>
                 <h3 className="mt-5 text-[19px] font-extrabold leading-tight">
                   {challenge.title}
                 </h3>
-                <p className="mt-3 text-[15px] leading-7 text-[#4b5563]">
+                <p className="mt-3 text-[15px] leading-7 text-[var(--texto-sec)]">
                   {challenge.description}
                 </p>
               </article>
@@ -356,7 +356,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="solucoes" className="scroll-mt-24 bg-white px-5 py-[5.5rem] md:py-24">
+      <section id="solucoes" className="scroll-mt-[92px] bg-[var(--branco)] px-5 py-[5.5rem] md:py-24">
         <div className="mx-auto max-w-[1160px]">
           <SectionHeading
             eyebrow="Soluções"
@@ -368,23 +368,23 @@ export default function Home() {
             {solutions.map((solution) => (
               <article
                 key={solution.title}
-                className="relative flex min-h-[350px] flex-col overflow-hidden rounded-[20px] border border-[#dbe3ec] bg-white p-7 shadow-[0_12px_30px_rgba(7,26,46,0.08)] transition hover:-translate-y-0.5 hover:shadow-[0_18px_46px_rgba(7,26,46,0.14)]"
+                className="relative flex min-h-[350px] flex-col overflow-hidden rounded-[20px] border border-[var(--cinza-borda)] bg-[var(--branco)] p-7 shadow-[0_12px_30px_rgba(7,26,46,0.08)] transition hover:-translate-y-0.5 hover:shadow-[0_18px_46px_rgba(7,26,46,0.14)]"
               >
-                <div className="absolute inset-x-0 top-0 h-[5px] bg-[#0e2a47]" />
-                <span className="grid h-11 w-11 place-items-center rounded-[14px] bg-[#0e2a47] text-sm font-extrabold text-white">
+                <div className="absolute inset-x-0 top-0 h-[5px] bg-[var(--azul)]" />
+                <span className="grid h-11 w-11 place-items-center rounded-[14px] bg-[var(--azul)] text-sm font-extrabold text-white">
                   {solution.number}
                 </span>
                 <h3 className="mt-6 text-2xl font-extrabold leading-tight">
                   {solution.title}
                 </h3>
-                <p className="mt-4 flex-1 text-[15px] leading-7 text-[#4b5563]">
+                <p className="mt-4 flex-1 text-[15px] leading-7 text-[var(--texto-sec)]">
                   {solution.description}
                 </p>
                 <div className="mt-6 flex flex-wrap gap-2">
                   {solution.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="rounded-full bg-[#e9f1f8] px-3 py-1.5 text-xs font-extrabold text-[#0e2a47]"
+                      className="rounded-full bg-[var(--azul-claro)] px-3 py-1.5 text-xs font-extrabold text-[var(--azul)]"
                     >
                       {tag}
                     </span>
@@ -394,12 +394,12 @@ export default function Home() {
             ))}
           </div>
 
-          <div className="mt-5 grid gap-5 rounded-[20px] bg-[#0e2a47] p-6 text-white shadow-[0_18px_46px_rgba(7,26,46,0.14)] md:grid-cols-[1fr_auto] md:items-center">
+          <div className="mt-5 grid gap-5 rounded-[20px] bg-[var(--azul)] p-6 text-white shadow-[0_18px_46px_rgba(7,26,46,0.14)] md:grid-cols-[1fr_auto] md:items-center">
             <div>
               <h3 className="text-2xl font-extrabold">
                 Apoios sob demanda
               </h3>
-              <p className="mt-2 max-w-3xl leading-7 text-white/74">
+              <p className="mt-2 max-w-3xl leading-7 text-white/75">
                 Auditoria interna, materiais didáticos, treinamento da equipe e
                 soluções digitais simples para acompanhar documentos, ações e
                 evidências quando fizer sentido no diagnóstico.
@@ -407,7 +407,7 @@ export default function Home() {
             </div>
             <a
               href="#diagnostico"
-              className="inline-flex min-h-[46px] items-center justify-center rounded-full bg-white px-6 py-3 text-center text-sm font-extrabold text-[#0e2a47] transition hover:bg-[#e9f1f8]"
+              className="inline-flex min-h-[46px] items-center justify-center rounded-full bg-[var(--branco)] px-6 py-3 text-center text-sm font-extrabold text-[var(--azul)] transition hover:bg-[var(--azul-claro)]"
             >
               Avaliar necessidade
             </a>
@@ -415,12 +415,12 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="bg-[#f5f7fa] px-5 py-14">
+      <section className="bg-[var(--cinza-claro)] px-5 py-14">
         <div className="mx-auto max-w-[1160px]">
-          <div className="grid gap-6 rounded-[20px] border border-[#dbe3ec] bg-white p-6 shadow-[0_12px_30px_rgba(7,26,46,0.08)] lg:grid-cols-[0.48fr_1fr] lg:items-center">
+          <div className="grid gap-6 rounded-[20px] border border-[var(--cinza-borda)] bg-[var(--branco)] p-6 shadow-[0_12px_30px_rgba(7,26,46,0.08)] lg:grid-cols-[0.48fr_1fr] lg:items-center">
             <div>
               <Badge tone="dark">Segmentos atendidos</Badge>
-              <h2 className="mt-4 text-2xl font-extrabold leading-tight text-[#111827]">
+              <h2 className="mt-4 text-2xl font-extrabold leading-tight text-[var(--texto)]">
                 Experiência em diferentes operações e níveis de maturidade.
               </h2>
             </div>
@@ -428,7 +428,7 @@ export default function Home() {
               {segments.map((segment) => (
                 <span
                   key={segment}
-                  className="rounded-full border border-[#dbe3ec] bg-[#f7f9fb] px-4 py-2 text-sm font-extrabold text-[#17456e]"
+                  className="rounded-full border border-[var(--cinza-borda)] bg-[#f7f9fb] px-4 py-2 text-sm font-extrabold text-[var(--azul-medio)]"
                 >
                   {segment}
                 </span>
@@ -440,7 +440,7 @@ export default function Home() {
 
       <section
         id="metodologia"
-        className="scroll-mt-24 bg-[#071a2e] px-5 py-[5.5rem] text-white md:py-24"
+        className="scroll-mt-[92px] bg-[var(--azul-profundo)] px-5 py-[5.5rem] text-white md:py-24"
       >
         <div className="mx-auto max-w-[1160px]">
           <SectionHeading
@@ -462,7 +462,7 @@ export default function Home() {
                 <h3 className="mt-5 text-xl font-extrabold leading-tight">
                   {item.title}
                 </h3>
-                <p className="mt-3 text-[15px] leading-7 text-white/72">
+                <p className="mt-3 text-[15px] leading-7 text-white/75">
                   {item.description}
                 </p>
               </article>
@@ -471,14 +471,14 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="diagnostico" className="scroll-mt-24 bg-[#f5f7fa] px-5 py-[5.5rem] md:py-24">
+      <section id="diagnostico" className="scroll-mt-[92px] bg-[var(--cinza-claro)] px-5 py-[5.5rem] md:py-24">
         <div className="mx-auto grid max-w-[1160px] items-start gap-7 lg:grid-cols-[0.9fr_1.1fr]">
-          <aside className="rounded-[24px] bg-[#0e2a47] p-8 text-white shadow-[0_18px_46px_rgba(7,26,46,0.14)]">
+          <aside className="rounded-[24px] bg-[var(--azul)] p-8 text-white shadow-[0_18px_46px_rgba(7,26,46,0.14)]">
             <Badge>Diagnóstico inicial</Badge>
             <h2 className="mt-4 text-[clamp(1.875rem,4vw,2.625rem)] font-extrabold leading-[1.12]">
               Quer saber por onde começar?
             </h2>
-            <p className="mt-4 leading-8 text-white/76">
+            <p className="mt-4 leading-8 text-white/75">
               Envie os dados essenciais para uma primeira leitura da
               necessidade. Se preferir, fale direto pelo WhatsApp e explique o
               contexto em poucas mensagens.
@@ -495,7 +495,7 @@ export default function Home() {
                   className="rounded-2xl border border-white/[0.12] bg-white/[0.08] p-4"
                 >
                   <strong className="block">{title}</strong>
-                  <span className="text-sm leading-6 text-white/72">{text}</span>
+                  <span className="text-sm leading-6 text-white/75">{text}</span>
                 </div>
               ))}
             </div>
@@ -504,7 +504,7 @@ export default function Home() {
               href={whatsappHref}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex min-h-[46px] w-full items-center justify-center rounded-full bg-[#25d366] px-6 py-3 text-center text-sm font-extrabold text-white transition hover:bg-[#1fb85a] sm:w-auto"
+              className="inline-flex min-h-[46px] w-full items-center justify-center rounded-full bg-[var(--verde)] px-6 py-3 text-center text-sm font-extrabold text-white transition hover:bg-[var(--verde-escuro)] sm:w-auto"
             >
               Tirar dúvida pelo WhatsApp
             </a>
@@ -514,59 +514,59 @@ export default function Home() {
             action="mailto:contato@zenitconsult.com.br"
             method="post"
             encType="text/plain"
-            className="rounded-[24px] border border-[#dbe3ec] bg-white p-7 shadow-[0_18px_46px_rgba(7,26,46,0.14)]"
+            className="rounded-[24px] border border-[var(--cinza-borda)] bg-[var(--branco)] p-7 text-[var(--texto)] shadow-[0_18px_46px_rgba(7,26,46,0.14)]"
           >
             <h3 className="text-2xl font-extrabold leading-tight md:text-[1.625rem]">
               Solicitar diagnóstico inicial
             </h3>
-            <p className="mt-2 leading-7 text-[#4b5563]">
+            <p className="mt-2 leading-7 text-[var(--texto-sec)]">
               Formulário enxuto para gerar o primeiro contato comercial e
               direcionar a solução mais adequada.
             </p>
 
             <div className="mt-6 grid gap-4 md:grid-cols-2">
-              <label className="grid gap-2 text-sm font-extrabold">
+              <label className="grid gap-2 text-sm font-extrabold text-[var(--texto)]">
                 Nome
                 <input
                   required
                   name="nome"
                   placeholder="Seu nome"
-                  className="min-h-[48px] rounded-[14px] border border-[#dbe3ec] bg-[#f7f9fb] px-4 py-3 font-normal outline-none transition focus:border-[#17456e] focus:ring-4 focus:ring-[#e9f1f8]"
+                  className="min-h-[48px] rounded-[14px] border border-[var(--cinza-borda)] bg-[#fbfcfe] px-4 py-3 font-normal text-[var(--texto)] outline-none transition focus:border-[var(--azul-medio)] focus:ring-4 focus:ring-[var(--azul-claro)]"
                 />
               </label>
-              <label className="grid gap-2 text-sm font-extrabold">
+              <label className="grid gap-2 text-sm font-extrabold text-[var(--texto)]">
                 Empresa
                 <input
                   required
                   name="empresa"
                   placeholder="Nome da empresa"
-                  className="min-h-[48px] rounded-[14px] border border-[#dbe3ec] bg-[#f7f9fb] px-4 py-3 font-normal outline-none transition focus:border-[#17456e] focus:ring-4 focus:ring-[#e9f1f8]"
+                  className="min-h-[48px] rounded-[14px] border border-[var(--cinza-borda)] bg-[#fbfcfe] px-4 py-3 font-normal text-[var(--texto)] outline-none transition focus:border-[var(--azul-medio)] focus:ring-4 focus:ring-[var(--azul-claro)]"
                 />
               </label>
-              <label className="grid gap-2 text-sm font-extrabold">
+              <label className="grid gap-2 text-sm font-extrabold text-[var(--texto)]">
                 WhatsApp
                 <input
                   required
                   name="whatsapp"
                   placeholder="(00) 00000-0000"
-                  className="min-h-[48px] rounded-[14px] border border-[#dbe3ec] bg-[#f7f9fb] px-4 py-3 font-normal outline-none transition focus:border-[#17456e] focus:ring-4 focus:ring-[#e9f1f8]"
+                  className="min-h-[48px] rounded-[14px] border border-[var(--cinza-borda)] bg-[#fbfcfe] px-4 py-3 font-normal text-[var(--texto)] outline-none transition focus:border-[var(--azul-medio)] focus:ring-4 focus:ring-[var(--azul-claro)]"
                 />
               </label>
-              <label className="grid gap-2 text-sm font-extrabold">
+              <label className="grid gap-2 text-sm font-extrabold text-[var(--texto)]">
                 E-mail opcional
                 <input
                   type="email"
                   name="email"
                   placeholder="seuemail@empresa.com.br"
-                  className="min-h-[48px] rounded-[14px] border border-[#dbe3ec] bg-[#f7f9fb] px-4 py-3 font-normal outline-none transition focus:border-[#17456e] focus:ring-4 focus:ring-[#e9f1f8]"
+                  className="min-h-[48px] rounded-[14px] border border-[var(--cinza-borda)] bg-[#fbfcfe] px-4 py-3 font-normal text-[var(--texto)] outline-none transition focus:border-[var(--azul-medio)] focus:ring-4 focus:ring-[var(--azul-claro)]"
                 />
               </label>
-              <label className="grid gap-2 text-sm font-extrabold">
+              <label className="grid gap-2 text-sm font-extrabold text-[var(--texto)]">
                 Segmento
                 <select
                   required
                   name="segmento"
-                  className="min-h-[48px] rounded-[14px] border border-[#dbe3ec] bg-[#f7f9fb] px-4 py-3 font-normal outline-none transition focus:border-[#17456e] focus:ring-4 focus:ring-[#e9f1f8]"
+                  className="min-h-[48px] rounded-[14px] border border-[var(--cinza-borda)] bg-[#fbfcfe] px-4 py-3 font-normal text-[var(--texto)] outline-none transition focus:border-[var(--azul-medio)] focus:ring-4 focus:ring-[var(--azul-claro)]"
                   defaultValue=""
                 >
                   <option value="" disabled>
@@ -581,12 +581,12 @@ export default function Home() {
                   <option>Outro</option>
                 </select>
               </label>
-              <label className="grid gap-2 text-sm font-extrabold">
+              <label className="grid gap-2 text-sm font-extrabold text-[var(--texto)]">
                 Principal necessidade
                 <select
                   required
                   name="necessidade"
-                  className="min-h-[48px] rounded-[14px] border border-[#dbe3ec] bg-[#f7f9fb] px-4 py-3 font-normal outline-none transition focus:border-[#17456e] focus:ring-4 focus:ring-[#e9f1f8]"
+                  className="min-h-[48px] rounded-[14px] border border-[var(--cinza-borda)] bg-[#fbfcfe] px-4 py-3 font-normal text-[var(--texto)] outline-none transition focus:border-[var(--azul-medio)] focus:ring-4 focus:ring-[var(--azul-claro)]"
                   defaultValue=""
                 >
                   <option value="" disabled>
@@ -601,12 +601,12 @@ export default function Home() {
                   <option>Ainda não sei</option>
                 </select>
               </label>
-              <label className="grid gap-2 text-sm font-extrabold md:col-span-2">
+              <label className="grid gap-2 text-sm font-extrabold text-[var(--texto)] md:col-span-2">
                 Mensagem curta
                 <textarea
                   name="mensagem"
                   placeholder="Conte brevemente o que sua empresa precisa resolver."
-                  className="min-h-32 rounded-[14px] border border-[#dbe3ec] bg-[#f7f9fb] px-4 py-3 font-normal outline-none transition focus:border-[#17456e] focus:ring-4 focus:ring-[#e9f1f8]"
+                  className="min-h-32 rounded-[14px] border border-[var(--cinza-borda)] bg-[#fbfcfe] px-4 py-3 font-normal text-[var(--texto)] outline-none transition focus:border-[var(--azul-medio)] focus:ring-4 focus:ring-[var(--azul-claro)]"
                 />
               </label>
             </div>
@@ -614,11 +614,11 @@ export default function Home() {
             <div className="mt-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
               <button
                 type="submit"
-                className="inline-flex min-h-[46px] items-center justify-center rounded-full bg-[#0e2a47] px-6 py-3 text-sm font-extrabold text-white transition hover:bg-[#17456e]"
+                className="inline-flex min-h-[46px] items-center justify-center rounded-full bg-[var(--azul)] px-6 py-3 text-sm font-extrabold text-white transition hover:bg-[var(--azul-medio)]"
               >
                 Enviar solicitação
               </button>
-              <span className="text-sm leading-6 text-[#4b5563]">
+              <span className="text-sm leading-6 text-[var(--texto-sec)]">
                 Formulário temporário via e-mail até conexão com CRM ou
                 WhatsApp real.
               </span>
@@ -627,23 +627,23 @@ export default function Home() {
         </div>
       </section>
 
-      <footer className="bg-[#071a2e] px-5 py-12 text-white">
+      <footer className="bg-[var(--azul-profundo)] px-5 py-12 text-white">
         <div className="mx-auto grid max-w-[1160px] gap-8 md:grid-cols-[1.3fr_0.8fr_0.9fr]">
           <div>
             <strong className="block text-lg font-extrabold uppercase tracking-[0.08em]">
               ZÊNIT Consult
             </strong>
-            <p className="mt-4 max-w-md leading-7 text-white/68">
+            <p className="mt-4 max-w-md leading-7 text-white/70">
               Consultoria digital em gestão auditável, qualidade, PBQP-H, ISO
               9001 e Programa de Integridade.
             </p>
-            <p className="mt-3 text-white/68">
+            <p className="mt-3 text-white/70">
               Fortaleza / Ceará · Atendimento digital e remoto.
             </p>
           </div>
           <div>
             <h4 className="font-extrabold">Navegação</h4>
-            <div className="mt-3 grid gap-2 text-white/68">
+            <div className="mt-3 grid gap-2 text-white/70">
               {navItems.map((item) => (
                 <a key={item.href} href={item.href} className="hover:text-white">
                   {item.label}
@@ -653,7 +653,7 @@ export default function Home() {
           </div>
           <div>
             <h4 className="font-extrabold">Contato</h4>
-            <div className="mt-3 grid gap-2 text-white/68">
+            <div className="mt-3 grid gap-2 text-white/70">
               <a
                 href="mailto:contato@zenitconsult.com.br"
                 className="hover:text-white"
