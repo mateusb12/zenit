@@ -1,9 +1,8 @@
 @import "tailwindcss";
-@import "../styles/zenit.css";
 
 :root {
-  --background: var(--zenit-white);
-  --foreground: var(--zenit-text);
+  --background: #ffffff;
+  --foreground: #111111;
 }
 
 @theme inline {

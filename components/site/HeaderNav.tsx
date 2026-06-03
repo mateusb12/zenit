@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
+import { cn } from "@/components/site/tailwind";
 import { navItems } from "@/data/landing";
 
 export function HeaderNav() {
@@ -61,7 +62,10 @@ export function HeaderNav() {
   }, [sectionIds]);
 
   return (
-    <nav className="zenit-nav" aria-label="Navegação principal">
+    <nav
+      className="flex items-center gap-1.5 whitespace-nowrap text-sm font-semibold text-white/85 max-[980px]:hidden"
+      aria-label="Navegação principal"
+    >
       {navItems.map((item) => {
         const isActive = activeHref === item.href;
 
@@ -69,7 +73,11 @@ export function HeaderNav() {
           <a
             key={item.href}
             href={item.href}
-            className={isActive ? "zenit-nav__link--active" : undefined}
+            className={cn(
+              "rounded-full px-[11px] py-2.5 transition-colors duration-200 hover:bg-white/10 hover:text-white",
+              isActive &&
+                "bg-white/15 text-white shadow-[inset_0_0_0_1px_rgba(255,255,255,0.16)]",
+            )}
             aria-current={isActive ? "location" : undefined}
             onClick={() => setActiveHref(item.href)}
           >
