@@ -1,6 +1,7 @@
-import { readFileSync, writeFileSync, existsSync } from "node:fs";
+import { existsSync, readFileSync, writeFileSync } from "node:fs";
 
 const dryRun = process.argv.includes("--dry-run");
+const stampOnly = process.argv.includes("--stamp-only");
 
 const packagePath = "package.json";
 const packageLockPath = "package-lock.json";
@@ -21,14 +22,10 @@ function bumpPatch(version) {
     throw new Error(`Expected semver version like 1.2.9, got: ${version}`);
   }
 
-  const major = Number(match[1]);
-  const minor = Number(match[2]);
-  const patch = Number(match[3]) + 1;
-
-  return `${major}.${minor}.${patch}`;
+  return `${match[1]}.${match[2]}.${Number(match[3]) + 1}`;
 }
 
-function getBuildTimestampLabel() {
+function getFortalezaTimestampLabel() {
   const parts = new Intl.DateTimeFormat("en-GB", {
     timeZone: "America/Fortaleza",
     day: "numeric",
@@ -41,24 +38,29 @@ function getBuildTimestampLabel() {
 
   const get = (type) => parts.find((part) => part.type === type)?.value ?? "";
 
-  const day = get("day");
-  const month = get("month").toLowerCase();
-  const year = get("year");
-  const hour = get("hour");
-  const minute = get("minute");
+  return `${get("day")}-${get("month").toLowerCase()}-${get("year")} at ${get("hour")}:${get("minute")}`;
+}
 
-  return `${day}-${month}-${year} at ${hour}:${minute}`;
+function writeBuildInfo(version, updatedAtLabel) {
+  writeFileSync(
+    buildInfoPath,
+    `export const buildInfo = {
+  version: "${version}",
+  updatedAtLabel: "${updatedAtLabel}",
+} as const;
+`,
+  );
 }
 
 const packageJson = readJson(packagePath);
 const previousVersion = packageJson.version;
-const nextVersion = bumpPatch(previousVersion);
-const updatedAtLabel = getBuildTimestampLabel();
+const nextVersion = stampOnly ? previousVersion : bumpPatch(previousVersion);
+const updatedAtLabel = getFortalezaTimestampLabel();
 
 console.log(
-  `${dryRun ? "[dry-run] " : ""}Deploy version: ${previousVersion} -> ${nextVersion}`,
+  `${dryRun ? "[dry-run] " : ""}${stampOnly ? "Stamp version" : "Bump version"}: ${previousVersion} -> ${nextVersion}`,
 );
-console.log(`${dryRun ? "[dry-run] " : ""}Updated at: ${updatedAtLabel}`);
+console.log(`${dryRun ? "[dry-run] " : ""}Fortaleza timestamp: ${updatedAtLabel}`);
 
 if (dryRun) {
   process.exit(0);
@@ -79,17 +81,12 @@ if (existsSync(packageLockPath)) {
   writeJson(packageLockPath, packageLock);
 }
 
-writeFileSync(
-  buildInfoPath,
-  `export const buildInfo = {
-  version: "${nextVersion}",
-  updatedAtLabel: "${updatedAtLabel}",
-} as const;
-`,
-);
+writeBuildInfo(nextVersion, updatedAtLabel);
 
 console.log(`Wrote ${packagePath}`);
+
 if (existsSync(packageLockPath)) {
   console.log(`Wrote ${packageLockPath}`);
 }
+
 console.log(`Wrote ${buildInfoPath}`);

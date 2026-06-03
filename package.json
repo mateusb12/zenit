@@ -1,17 +1,18 @@
 {
   "name": "zenit",
-  "version": "1.2.9",
+  "version": "1.2.10",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "deploy": "npm run version:bump && npm run lint && npm run build && git add -A -- . \":(exclude)**/*.bak.*\" \":(exclude)**/*.backup.*\" \":(exclude).next/**\" \":(exclude)out/**\" && git commit -m \"Bump version and deploy site\" && git push origin main && sleep 5 && gh run watch $(gh run list --workflow deploy-github-pages.yml --branch main --limit 1 --json databaseId -q \".[0].databaseId\") --exit-status",
+    "deploy": "npm run version:bump && npm run lint && npm run build && git add -A -- . \":(exclude)**/*.bak.*\" \":(exclude)**/*.backup.*\" \":(exclude).next/**\" \":(exclude)out/**\" && git commit -m \"Bump version and deploy site\" && git push origin main && sleep 5 && gh run watch $(gh run list --workflow deploy-github-pages.yml --branch main --limit 1 --json databaseId -q '.[0].databaseId') --exit-status",
     "deploy:trigger": "gh workflow run deploy-github-pages.yml --ref main",
     "deploy:watch": "gh run watch $(gh run list --workflow deploy-github-pages.yml --branch main --limit 1 --json databaseId -q '.[0].databaseId') --exit-status",
     "version:bump": "node scripts/bump-version.mjs",
-    "version:bump:dry": "node scripts/bump-version.mjs --dry-run"
+    "version:bump:dry": "node scripts/bump-version.mjs --dry-run",
+    "version:stamp": "node scripts/bump-version.mjs --stamp-only"
   },
   "dependencies": {
     "next": "16.2.4",
