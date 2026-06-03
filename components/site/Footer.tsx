@@ -1,5 +1,6 @@
 import { navItems, whatsappHref } from "@/data/landing";
 import { containerClass } from "@/components/site/tailwind";
+import { VersionStamp } from "@/components/site/VersionStamp";
 
 export function Footer() {
   return (
@@ -52,6 +53,10 @@ export function Footer() {
             </a>
           </div>
         </div>
+      </div>
+
+      <div className={`${containerClass} mt-10 border-t border-white/10 pt-5`}>
+        <VersionStamp />
       </div>
     </footer>
   );

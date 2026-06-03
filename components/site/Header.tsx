@@ -1,5 +1,6 @@
 import { ButtonLink } from "@/components/site/ButtonLink";
 import { HeaderNav } from "@/components/site/HeaderNav";
+import { VersionInfoButton } from "@/components/site/VersionInfoButton";
 import { containerClass } from "@/components/site/tailwind";
 import { whatsappHref } from "@/data/landing";
 
@@ -27,15 +28,19 @@ export function Header() {
 
         <HeaderNav />
 
-        <ButtonLink
-          href={whatsappHref}
-          target="_blank"
-          rel="noopener noreferrer"
-          variant="whatsapp"
-          className="min-h-[42px] px-[18px] max-[680px]:min-h-10 max-[680px]:px-3.5 max-[680px]:py-2.5"
-        >
-          WhatsApp
-        </ButtonLink>
+        <div className="flex min-w-max items-center gap-2">
+          <VersionInfoButton />
+
+          <ButtonLink
+            href={whatsappHref}
+            target="_blank"
+            rel="noopener noreferrer"
+            variant="whatsapp"
+            className="min-h-[42px] px-[18px] max-[680px]:min-h-10 max-[680px]:px-3.5 max-[680px]:py-2.5"
+          >
+            WhatsApp
+          </ButtonLink>
+        </div>
       </div>
     </header>
   );
