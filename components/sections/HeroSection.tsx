@@ -2,6 +2,7 @@ import { Badge } from "@/components/site/Badge";
 import { ButtonLink } from "@/components/site/ButtonLink";
 import { containerClass } from "@/components/site/tailwind";
 import { authorityItems, heroProofItems, whatsappHref } from "@/data/landing";
+import { publicAssetPath } from "@/data/siteAssets";
 
 export function HeroSection() {
   return (
@@ -12,7 +13,7 @@ export function HeroSection() {
       <div
         className="absolute inset-0"
         style={{
-          backgroundImage: "url('/deal.png')",
+          backgroundImage: `url('${publicAssetPath("deal.png")}')`,
           backgroundRepeat: "no-repeat",
           backgroundSize: "cover",
           backgroundPosition: "center 32%",
@@ -33,7 +34,7 @@ export function HeroSection() {
       <div
         className="absolute inset-0 mix-blend-screen"
         style={{
-          backgroundImage: "url('/hero-consultoria.svg')",
+          backgroundImage: `url('${publicAssetPath("hero-consultoria.svg")}')`,
           backgroundRepeat: "no-repeat",
           backgroundSize: "cover",
           backgroundPosition: "center 50%",
