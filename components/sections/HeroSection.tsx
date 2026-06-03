@@ -7,10 +7,10 @@ export function HeroSection() {
   return (
     <section
       id="inicio"
-      className="relative isolate min-h-[calc(100vh-78px)] overflow-hidden scroll-mt-[92px] bg-[#071a2e] pt-[138px] pb-16 text-white max-[680px]:min-h-0 max-[680px]:pt-[112px] max-[680px]:pb-14"
+      className="relative isolate min-h-[calc(100vh-78px)] overflow-visible scroll-mt-[92px] bg-[#071a2e] pt-[138px] pb-40 text-white max-[680px]:min-h-0 max-[680px]:pt-[112px] max-[680px]:pb-24"
     >
       <div
-        className="absolute inset-0"
+        className="absolute inset-x-0 top-0 -bottom-36"
         style={{
           backgroundImage: "url('/deal.png')",
           backgroundRepeat: "no-repeat",
@@ -22,7 +22,7 @@ export function HeroSection() {
       />
 
       <div
-        className="absolute inset-0"
+        className="absolute inset-x-0 top-0 -bottom-36"
         style={{
           backgroundImage:
             "linear-gradient(90deg, rgba(7, 26, 46, 0.88) 0%, rgba(7, 26, 46, 0.76) 42%, rgba(14, 42, 71, 0.48) 100%)",
@@ -31,7 +31,7 @@ export function HeroSection() {
       />
 
       <div
-        className="absolute inset-0 mix-blend-screen"
+        className="absolute inset-x-0 top-0 -bottom-36 mix-blend-screen"
         style={{
           backgroundImage: "url('/hero-consultoria.svg')",
           backgroundRepeat: "no-repeat",
@@ -43,7 +43,7 @@ export function HeroSection() {
       />
 
       <div
-        className="absolute inset-0"
+        className="absolute inset-x-0 top-0 -bottom-36"
         style={{
           backgroundImage:
             "radial-gradient(circle at 75% 22%, rgba(184, 216, 243, 0.12), transparent 22%), linear-gradient(180deg, rgba(7, 26, 46, 0.06), rgba(7, 26, 46, 0.18))",
