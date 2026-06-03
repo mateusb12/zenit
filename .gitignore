@@ -43,3 +43,5 @@ next-env.d.ts
 /.idea/vcs.xml
 /projeto.md
 /.idea/*
+*.bak.*
+*.backup.*
