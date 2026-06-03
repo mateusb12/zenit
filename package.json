@@ -6,7 +6,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "deploy": "npm run lint && npm run build && git push origin main && sleep 5 && gh run watch $(gh run list --workflow deploy-github-pages.yml --branch main --limit 1 --json databaseId -q '.[0].databaseId') --exit-status",
+    "deploy:trigger": "gh workflow run deploy-github-pages.yml --ref main",
+    "deploy:watch": "gh run watch $(gh run list --workflow deploy-github-pages.yml --branch main --limit 1 --json databaseId -q '.[0].databaseId') --exit-status"
   },
   "dependencies": {
     "next": "16.2.4",
