@@ -933,3 +933,10 @@
     width: 100%;
   }
 }
+
+.zenit-nav a.zenit-nav__link--active,
+.zenit-nav a[aria-current="location"] {
+  background: rgba(255, 255, 255, 0.16);
+  color: var(--zenit-white);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.16);
+}

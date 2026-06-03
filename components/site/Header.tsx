@@ -1,5 +1,6 @@
 import { ButtonLink } from "@/components/site/ButtonLink";
-import { navItems, whatsappHref } from "@/data/landing";
+import { HeaderNav } from "@/components/site/HeaderNav";
+import { whatsappHref } from "@/data/landing";
 
 export function Header() {
   return (
@@ -13,13 +14,7 @@ export function Header() {
           </span>
         </a>
 
-        <nav className="zenit-nav" aria-label="Navegação principal">
-          {navItems.map((item) => (
-            <a key={item.href} href={item.href}>
-              {item.label}
-            </a>
-          ))}
-        </nav>
+        <HeaderNav />
 
         <ButtonLink
           href={whatsappHref}
