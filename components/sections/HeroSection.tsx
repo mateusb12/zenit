@@ -1,54 +1,45 @@
 import { Badge } from "@/components/site/Badge";
 import { ButtonLink } from "@/components/site/ButtonLink";
 import { containerClass } from "@/components/site/tailwind";
-import { authorityItems, heroProofItems, whatsappHref } from "@/data/landing";
+import { heroProofItems, whatsappHref } from "@/data/landing";
 import { publicAssetPath } from "@/data/siteAssets";
 
-export function HeroSection() {
-  return (
+export function HeroSection() { return (
     <section
       id="inicio"
       className="relative isolate overflow-hidden scroll-mt-[92px] bg-[#071a2e] pt-[138px] pb-10 text-white max-[680px]:pt-[112px]"
     >
       <div
         className="absolute inset-0"
-        style={{
-          backgroundImage: `url('${publicAssetPath("deal.png")}')`,
+        style={{ backgroundImage: `url('${publicAssetPath("deal.png")}')`,
           backgroundRepeat: "no-repeat",
           backgroundSize: "cover",
           backgroundPosition: "center 32%",
-          opacity: 0.58,
-        }}
+          opacity: 0.58, }}
         aria-hidden="true"
       />
 
       <div
         className="absolute inset-0"
-        style={{
-          backgroundImage:
-            "linear-gradient(90deg, rgba(7, 26, 46, 0.84) 0%, rgba(7, 26, 46, 0.7) 42%, rgba(14, 42, 71, 0.38) 100%)",
-        }}
+        style={{ backgroundImage:
+            "linear-gradient(90deg, rgba(7, 26, 46, 0.84) 0%, rgba(7, 26, 46, 0.7) 42%, rgba(14, 42, 71, 0.38) 100%)", }}
         aria-hidden="true"
       />
 
       <div
         className="absolute inset-0 mix-blend-screen"
-        style={{
-          backgroundImage: `url('${publicAssetPath("hero-consultoria.svg")}')`,
+        style={{ backgroundImage: `url('${publicAssetPath("hero-consultoria.svg")}')`,
           backgroundRepeat: "no-repeat",
           backgroundSize: "cover",
           backgroundPosition: "center 50%",
-          opacity: 0.04,
-        }}
+          opacity: 0.04, }}
         aria-hidden="true"
       />
 
       <div
         className="absolute inset-0"
-        style={{
-          backgroundImage:
-            "radial-gradient(circle at 75% 22%, rgba(184, 216, 243, 0.1), transparent 24%), linear-gradient(180deg, rgba(7, 26, 46, 0.02), rgba(7, 26, 46, 0.16))",
-        }}
+        style={{ backgroundImage:
+            "radial-gradient(circle at 75% 22%, rgba(184, 216, 243, 0.1), transparent 24%), linear-gradient(180deg, rgba(7, 26, 46, 0.02), rgba(7, 26, 46, 0.16))", }}
         aria-hidden="true"
       />
 
@@ -96,22 +87,6 @@ export function HeroSection() {
           </div>
         </div>
 
-        <div className="relative z-10 grid grid-cols-4 gap-5 pb-9 max-[980px]:grid-cols-2 max-[680px]:grid-cols-1">
-          {authorityItems.map((item) => (
-            <article
-              key={item.value}
-              className="rounded-[18px] border border-white/20 bg-white/[0.12] p-5 shadow-[0_18px_46px_rgba(7,26,46,0.18)] backdrop-blur"
-            >
-              <strong className="block text-[40px] leading-none">
-                {item.value}
-              </strong>
-              <span className="mt-3 block text-sm leading-[1.55] text-white/75">
-                {item.label}
-              </span>
-            </article>
-          ))}
-        </div>
-      </div>
+</div>
     </section>
-  );
-}
+  ); }

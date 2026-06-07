@@ -42,19 +42,19 @@ export const navItems: NavItem[] = [
 export const authorityItems: AuthorityItem[] = [
   {
     value: "15+",
-    label: "anos de experiência do consultor fundador",
+    label: "anos de experiência",
   },
   {
     value: "10k+",
-    label: "horas em consultorias, auditorias, diagnósticos e implantação",
+    label: "horas de atuação",
   },
   {
     value: "100%",
-    label: "atendimento digital, remoto e orientado por evidências",
+    label: "atendimento digital",
   },
   {
     value: "4",
-    label: "frentes de implantação: diagnóstico, estrutura, rotina e verificação",
+    label: "etapas de implantação",
   },
 ];
 
