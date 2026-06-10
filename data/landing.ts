@@ -50,7 +50,7 @@ export const authorityItems: AuthorityItem[] = [
   },
   {
     value: "+5k",
-    label: "horas em auditorias e conformidade",
+    label: "horas em auditorias",
   },
 ];
 
