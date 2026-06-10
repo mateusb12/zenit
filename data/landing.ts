@@ -42,19 +42,15 @@ export const navItems: NavItem[] = [
 export const authorityItems: AuthorityItem[] = [
   {
     value: "15+",
-    label: "anos de experiência",
+    label: "anos de experiência técnica",
   },
   {
-    value: "10k+",
-    label: "horas de atuação",
+    value: "+10k",
+    label: "horas em consultorias e diagnósticos",
   },
   {
-    value: "100%",
-    label: "atendimento digital",
-  },
-  {
-    value: "4",
-    label: "etapas de implantação",
+    value: "+5k",
+    label: "horas em auditorias e conformidade",
   },
 ];
 
