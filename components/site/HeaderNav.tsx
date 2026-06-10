@@ -74,9 +74,9 @@ export function HeaderNav() {
             key={item.href}
             href={item.href}
             className={cn(
-              "rounded-full px-[11px] py-2.5 transition-colors duration-200 hover:bg-white/10 hover:text-white",
+              "relative px-[9px] py-2 transition-colors duration-200 hover:text-white",
               isActive &&
-                "bg-white/15 text-white shadow-[inset_0_0_0_1px_rgba(255,255,255,0.16)]",
+                "text-white after:absolute after:inset-x-[9px] after:bottom-0 after:h-px after:rounded-full after:bg-white/50",
             )}
             aria-current={isActive ? "location" : undefined}
             onClick={() => setActiveHref(item.href)}

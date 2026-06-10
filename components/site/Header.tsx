@@ -1,5 +1,4 @@
 import { HeaderNav } from "@/components/site/HeaderNav";
-import { VersionInfoButton } from "@/components/site/VersionInfoButton";
 import { containerClass } from "@/components/site/tailwind";
 import { whatsappHref } from "@/data/landing";
 import { publicAssetPath } from "@/data/siteAssets";
@@ -29,21 +28,20 @@ export function Header() {
         <HeaderNav />
 
         <div className="flex min-w-max items-center gap-2">
-          <VersionInfoButton />
-
           <a
             href={whatsappHref}
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="Falar com a ZÊNIT pelo WhatsApp"
+            aria-label="WhatsApp da ZÊNIT"
             title="WhatsApp"
-            className="grid h-10 w-10 place-items-center rounded-full transition-[transform,filter] duration-200 hover:-translate-y-0.5 hover:brightness-110 focus:outline-none focus:ring-2 focus:ring-[#25d366]/45"
+            className="inline-flex min-h-10 items-center justify-center gap-2 rounded-full border border-[#25d366]/28 bg-white/[0.06] px-3 py-2 text-sm font-extrabold text-white transition-[transform,background,border-color,filter] duration-200 hover:-translate-y-0.5 hover:border-[#25d366]/45 hover:bg-white/[0.10] hover:text-white hover:brightness-110 focus:outline-none focus:ring-2 focus:ring-[#25d366]/35 max-[680px]:h-10 max-[680px]:w-10 max-[680px]:px-0"
           >
+            <span className="max-[680px]:sr-only">WhatsApp</span>
             <img
               src={publicAssetPath("whatsapp.svg")}
               alt=""
               aria-hidden="true"
-              className="h-8 w-8 object-contain"
+              className="h-6 w-6 object-contain"
             />
           </a>
         </div>
