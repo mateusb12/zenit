@@ -49,14 +49,15 @@ export function HeroSection() { return (
             <Badge>Consultoria digital em gestão auditável</Badge>
 
             <h1 className="mt-7 max-w-[800px] text-[clamp(42px,5.6vw,68px)] max-[680px]:text-[clamp(34px,11vw,48px)]">
-              Qualidade, PBQP-H e integridade com{" "}
-              <span className="text-[#b8d8f3]">processos e evidências.</span>
+              Consultoria digital para{" "}
+              <span className="text-[#b8d8f3]">
+                PBQP-H, ISO 9001 e Programa de Integridade.
+              </span>
             </h1>
 
             <p className="mt-6 max-w-[720px] text-[18px] leading-[1.75] text-white/82 max-[680px]:text-base">
-              Organize documentos, responsabilidades e registros para auditorias,
-              certificações e licitações com uma implantação digital, objetiva e
-              acompanhada por especialistas.
+              Organizamos processos, documentos e evidências para auditorias,
+              certificações, licitações e exigências de clientes.
             </p>
 
             <div className="mt-9 flex flex-wrap gap-3 max-[680px]:flex-col max-[680px]:items-stretch">
