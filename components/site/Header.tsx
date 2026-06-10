@@ -1,4 +1,5 @@
 import { HeaderNav } from "@/components/site/HeaderNav";
+import { VersionInfoButton } from "@/components/site/VersionInfoButton";
 import { containerClass } from "@/components/site/tailwind";
 import { whatsappHref } from "@/data/landing";
 import { publicAssetPath } from "@/data/siteAssets";
@@ -44,6 +45,10 @@ export function Header() {
               className="h-6 w-6 object-contain"
             />
           </a>
+
+          <div className="ml-3 max-[680px]:ml-1.5">
+            <VersionInfoButton />
+          </div>
         </div>
       </div>
     </header>
