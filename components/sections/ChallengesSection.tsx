@@ -4,6 +4,8 @@ import {
   containerClass,
   gridClass,
 } from "@/components/site/tailwind";
+import Image from "next/image";
+import { publicAssetPath } from "@/data/siteAssets";
 import { challenges } from "@/data/landing";
 
 export function ChallengesSection() {
@@ -24,14 +26,24 @@ export function ChallengesSection() {
         </div>
 
         <div className={`${gridClass} grid-cols-4 max-[980px]:grid-cols-2 max-[680px]:grid-cols-1`}>
-          {challenges.map((challenge, index) => (
+          {challenges.map((challenge) => (
             <article
               key={challenge.title}
               className={cn(cardClass, "min-h-[220px] border-white/12 bg-white/[0.07] p-6 text-white shadow-[0_18px_44px_rgba(0,0,0,0.18)] backdrop-blur-sm max-[680px]:min-h-[205px] max-[680px]:p-[20px]")}
             >
-              <span className="grid h-[42px] w-[42px] place-items-center rounded-[14px] border border-white/10 bg-white/10 text-sm font-extrabold text-white">
-                {String(index + 1).padStart(2, "0")}
-              </span>
+              <div className="flex h-[84px] items-center justify-center">
+                <Image
+                  src={publicAssetPath(challenge.icon)}
+                  alt=""
+                  aria-hidden="true"
+                  width={64}
+                  height={64}
+                  className={cn(
+                    "object-contain",
+                    challenge.icon === "mess.png" ? "h-20 w-20" : "h-16 w-16",
+                  )}
+                />
+              </div>
               <h3 className="mt-5 text-[21px] text-white">
                 {challenge.title}
               </h3>

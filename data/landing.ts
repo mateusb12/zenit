@@ -11,6 +11,7 @@ export type AuthorityItem = {
 export type Challenge = {
   title: string;
   description: string;
+  icon: string;
 };
 
 export type Solution = {
@@ -84,21 +85,25 @@ export const heroPanelSteps = [
 export const challenges: Challenge[] = [
   {
     title: "Documentos dispersos",
+    icon: "pile-of-papers.png",
     description:
       "Procedimentos, planilhas e registros ficam espalhados em pastas, e-mails e conversas.",
   },
   {
     title: "Gestão informal",
+    icon: "mess.png",
     description:
       "As rotinas acontecem, mas sem padrão claro, responsável definido ou rastreabilidade.",
   },
   {
     title: "Falta de evidências",
+    icon: "magnifier-paper.png",
     description:
       "A empresa até executa atividades, mas não consegue comprovar de forma organizada.",
   },
   {
     title: "Risco em auditoria",
+    icon: "risk.png",
     description:
       "Na hora de comprovar integridade, PBQP-H ou ISO 9001, as lacunas aparecem tarde demais.",
   },
