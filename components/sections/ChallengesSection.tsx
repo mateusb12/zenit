@@ -36,12 +36,9 @@ export function ChallengesSection() {
                   src={publicAssetPath(challenge.icon)}
                   alt=""
                   aria-hidden="true"
-                  width={64}
-                  height={64}
-                  className={cn(
-                    "object-contain",
-                    challenge.icon === "mess.png" ? "h-20 w-20" : "h-16 w-16",
-                  )}
+                  width={96}
+                  height={96}
+                  className="h-24 w-24 object-contain"
                 />
               </div>
               <h3 className="mt-5 text-[21px] text-white">
