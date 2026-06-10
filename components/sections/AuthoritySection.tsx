@@ -4,7 +4,7 @@ export function AuthoritySection() {
   return (
     <section
       aria-label="Trajetória técnica real"
-      className="bg-[linear-gradient(135deg,#071A2E,#0E2A47)] px-5 py-11 text-white md:py-12"
+      className="flex min-h-[40vh] items-center bg-[#0b2743] px-5 py-10 text-white md:py-12"
     >
       <div className="mx-auto max-w-[1160px]">
         <div className="mx-auto mb-7 max-w-[720px] text-center">
@@ -22,7 +22,7 @@ export function AuthoritySection() {
           {authorityItems.map((item) => (
             <article
               key={item.value}
-              className="flex min-h-[126px] flex-col items-center justify-center border-b border-white/12 bg-[#0e2a47]/88 px-5 py-6 text-center sm:min-h-[132px] sm:odd:border-r md:border-b-0 md:border-r md:last:border-r-0 md:odd:border-r"
+              className="flex min-h-[138px] flex-col items-center justify-center border-b border-white/12 bg-[#0e2a47]/88 px-5 py-6 text-center sm:min-h-[146px] sm:odd:border-r md:border-b-0 md:border-r md:last:border-r-0 md:odd:border-r"
             >
               <strong className="block text-[clamp(2.55rem,4vw,3.35rem)] font-extrabold leading-none tracking-[-0.035em] text-white">
                 {item.value}
