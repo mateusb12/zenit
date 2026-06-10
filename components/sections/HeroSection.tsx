@@ -68,20 +68,20 @@ export function HeroSection() { return (
                 rel="noopener noreferrer"
                 variant="whatsapp"
               >
-                Falar no WhatsApp
+                WhatsApp
               </ButtonLink>
             </div>
 
-            <div className="mt-9 flex max-w-[780px] flex-wrap gap-3">
+            <div className="mt-9 flex max-w-[820px] flex-wrap gap-2.5">
               {heroProofItems.map((item) => (
                 <span
                   key={item}
-                  className="rounded-full border border-white/15 bg-white/10 px-4 py-2 text-sm font-extrabold text-white/90 backdrop-blur"
+                  className="rounded-full border border-white/10 bg-white/[0.055] px-3.5 py-1.5 text-xs font-extrabold text-white/72 backdrop-blur-sm"
                 >
                   {item}
                 </span>
               ))}
-              <span className="rounded-full border border-white/15 bg-white/10 px-4 py-2 text-sm font-extrabold text-white/90 backdrop-blur">
+              <span className="rounded-full border border-white/10 bg-white/[0.055] px-3.5 py-1.5 text-xs font-extrabold text-white/72 backdrop-blur-sm">
                 Atendimento digital e remoto
               </span>
             </div>
