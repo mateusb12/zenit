@@ -112,24 +112,24 @@ export const challenges: Challenge[] = [
 export const solutions: Solution[] = [
   {
     number: "01",
-    title: "Programa de Integridade para Licitações",
+    title: "ISO 9001 para sair da gestão informal",
     description:
-      "Políticas, matriz de riscos, canal de integridade, controles, registros e evidências para empresas que precisam demonstrar compliance.",
-    tags: ["Integridade", "Compliance", "CGU", "Licitações"],
+      "Para empresas que precisam mapear processos, padronizar rotinas, definir responsáveis, acompanhar indicadores e identificar desvios antes que virem retrabalho.",
+    tags: ["ISO 9001", "Processos", "Indicadores", "Melhoria"],
   },
   {
     number: "02",
-    title: "PBQP-H Nível B para Construção Civil",
+    title: "Programa de Integridade para Licitações e Contratos",
     description:
-      "Implantação enxuta de processos, procedimentos, registros de obra, controle documental e plano de ação para construtoras.",
-    tags: ["PBQP-H", "Obras", "Processos", "Evidências"],
+      "Para empresas que precisam estruturar regras, controles, canal, treinamentos e registros para participar de licitações, atender exigências contratuais e reduzir riscos de integridade.",
+    tags: ["Integridade", "Compliance", "Licitações", "Contratos"],
   },
   {
     number: "03",
-    title: "ISO 9001 para Empresas em Geral",
+    title: "PBQP-H Nível B para Construtoras",
     description:
-      "Organização da gestão da qualidade com responsabilidades, indicadores, auditoria interna, tratamento de não conformidades e melhoria contínua.",
-    tags: ["ISO 9001", "SGQ", "Auditoria", "Qualidade"],
+      "Para construtoras que precisam atender exigências do mercado, acessar oportunidades de financiamento e organizar processos, registros e evidências do sistema da qualidade.",
+    tags: ["PBQP-H", "Construção civil"],
   },
 ];
 

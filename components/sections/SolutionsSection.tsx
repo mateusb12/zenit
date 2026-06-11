@@ -1,4 +1,3 @@
-import { ButtonLink } from "@/components/site/ButtonLink";
 import { SectionHeading } from "@/components/site/SectionHeading";
 import {
   cardClass,
@@ -15,8 +14,8 @@ export function SolutionsSection() {
       <div className={containerClass}>
         <SectionHeading
           eyebrow="Soluções"
-          title="Três frentes principais para organizar, implantar e comprovar."
-          description="A consultoria é digital, objetiva e ajustada à realidade da empresa. O foco é criar uma base auditável sem transformar a implantação em um projeto pesado."
+          title="PBQP-H, Integridade e ISO 9001 para organizar processos, evidências e gestão."
+          description="Implantação digital, objetiva e acompanhada para estruturar documentos, registros e controles sem tornar o projeto pesado para a empresa."
         />
 
         <div className={`${gridClass} grid-cols-3 max-[980px]:grid-cols-2 max-[680px]:grid-cols-1`}>
@@ -51,17 +50,6 @@ export function SolutionsSection() {
           ))}
         </div>
 
-        <div className="mt-5 grid grid-cols-[1fr_auto] items-center gap-5 rounded-[20px] bg-[#0e2a47] p-6 text-white shadow-[0_18px_46px_rgba(7,26,46,0.14)] max-[980px]:grid-cols-1 max-[680px]:p-[22px]">
-          <div>
-            <h3 className="text-2xl">Apoios sob demanda</h3>
-            <p className="mt-2 max-w-[760px] leading-[1.75] text-white/75">
-              Auditoria interna, materiais didáticos, treinamento da equipe e
-              soluções digitais simples para acompanhar documentos, ações e
-              evidências quando fizer sentido no diagnóstico.
-            </p>
-          </div>
-          <ButtonLink href="#diagnostico">Avaliar necessidade</ButtonLink>
-        </div>
       </div>
     </section>
   );
