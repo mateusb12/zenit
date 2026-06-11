@@ -84,28 +84,28 @@ export const heroPanelSteps = [
 
 export const challenges: Challenge[] = [
   {
-    title: "Documentos dispersos",
+    title: "Informações fora de controle",
     icon: "challenge-documents.png",
     description:
-      "Procedimentos, planilhas e registros ficam espalhados em pastas, e-mails e conversas.",
+      "Procedimentos, registros e evidências existem, mas ficam em locais diferentes, sem padrão claro de controle, versão ou responsável.",
   },
   {
-    title: "Gestão informal",
+    title: "Gestão na cabeça das pessoas",
     icon: "challenge-informal-management.png",
     description:
-      "As rotinas acontecem, mas sem padrão claro, responsável definido ou rastreabilidade.",
+      "A rotina funciona porque alguém sabe fazer, não porque existe um padrão claro, registrado e acompanhado.",
   },
   {
-    title: "Falta de evidências",
+    title: "Registros que não convencem",
     icon: "challenge-evidence.png",
     description:
-      "A empresa até executa atividades, mas não consegue comprovar de forma organizada.",
+      "A empresa executa atividades, mas não consegue comprovar de forma rápida, organizada e confiável.",
   },
   {
-    title: "Risco em auditoria",
+    title: "Gaps descobertos tarde demais",
     icon: "challenge-risk.png",
     description:
-      "Na hora de comprovar integridade, PBQP-H ou ISO 9001, as lacunas aparecem tarde demais.",
+      "As falhas aparecem quando o auditor, o edital ou o cliente já está exigindo comprovação.",
   },
 ];
 
