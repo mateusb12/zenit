@@ -31,14 +31,18 @@ export function ChallengesSection() {
               key={challenge.title}
               className={cn(cardClass, "min-h-[220px] border-white/12 bg-white/[0.07] p-6 text-white shadow-[0_18px_44px_rgba(0,0,0,0.18)] backdrop-blur-sm max-[680px]:min-h-[205px] max-[680px]:p-[20px]")}
             >
-              <div className="flex h-[84px] items-center justify-center">
+              <div className="relative flex h-[96px] items-center justify-center">
+                <span
+                  aria-hidden="true"
+                  className="absolute h-24 w-24 rounded-full bg-[radial-gradient(circle,rgba(184,216,243,0.20)_0%,rgba(64,196,255,0.10)_36%,transparent_72%)] blur-sm"
+                />
                 <Image
                   src={publicAssetPath(challenge.icon)}
                   alt=""
                   aria-hidden="true"
-                  width={96}
-                  height={96}
-                  className="h-24 w-24 object-contain"
+                  width={104}
+                  height={104}
+                  className="relative h-[104px] w-[104px] object-contain drop-shadow-[0_0_14px_rgba(79,210,255,0.28)]"
                 />
               </div>
               <h3 className="mt-5 text-[21px] text-white">

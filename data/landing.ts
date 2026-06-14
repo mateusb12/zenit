@@ -85,25 +85,25 @@ export const heroPanelSteps = [
 export const challenges: Challenge[] = [
   {
     title: "Informações fora de controle",
-    icon: "challenge-documents.png",
+    icon: "challenge-info-control-neon.png",
     description:
       "Procedimentos, registros e evidências existem, mas ficam em locais diferentes, sem padrão claro de controle, versão ou responsável.",
   },
   {
     title: "Gestão na cabeça das pessoas",
-    icon: "challenge-informal-management.png",
+    icon: "challenge-knowledge-head-neon.png",
     description:
       "A rotina funciona porque alguém sabe fazer, não porque existe um padrão claro, registrado e acompanhado.",
   },
   {
     title: "Registros que não convencem",
-    icon: "challenge-evidence.png",
+    icon: "challenge-evidence-check-neon.png",
     description:
       "A empresa executa atividades, mas não consegue comprovar de forma rápida, organizada e confiável.",
   },
   {
     title: "Gaps descobertos tarde demais",
-    icon: "challenge-risk.png",
+    icon: "challenge-risk-neon.png",
     description:
       "As falhas aparecem quando o auditor, o edital ou o cliente já está exigindo comprovação.",
   },
