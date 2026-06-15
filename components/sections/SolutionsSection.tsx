@@ -28,7 +28,7 @@ export function SolutionsSection() {
               key={solution.title}
               className={cn(
                 cardClass,
-                "relative flex h-full min-h-[398px] flex-col overflow-hidden p-7 transition-[transform,box-shadow] duration-200 before:absolute before:inset-x-0 before:top-0 before:h-[5px] before:bg-[linear-gradient(90deg,#0e2a47,#3a6ea5)] before:content-[''] hover:-translate-y-0.5 hover:shadow-[0_18px_46px_rgba(7,26,46,0.14)] max-[680px]:min-h-[340px] max-[680px]:p-[22px]",
+                "relative flex h-full min-h-[340px] flex-col overflow-hidden p-7 transition-[transform,box-shadow] duration-200 before:absolute before:inset-x-0 before:top-0 before:h-[5px] before:bg-[linear-gradient(90deg,#0e2a47,#3a6ea5)] before:content-[''] hover:-translate-y-0.5 hover:shadow-[0_18px_46px_rgba(7,26,46,0.14)] max-[680px]:min-h-[300px] max-[680px]:p-[22px]",
               )}
             >
               <span className="grid h-11 w-11 place-items-center rounded-[14px] bg-[#0e2a47] text-sm font-extrabold text-white">
@@ -37,23 +37,12 @@ export function SolutionsSection() {
               <h3 className="mt-6 text-[23px] leading-[1.12] text-[#0e2a47]">
                 {solution.title}
               </h3>
-              <p className="mt-3 flex-1 text-[15px] leading-[1.75] text-[#4b5563]">
+              <p className="mt-3 text-[15px] leading-[1.75] text-[#4b5563]">
                 {solution.description}
               </p>
-              <div className="mt-auto flex flex-wrap gap-2 pt-6">
-                {solution.tags.map((tag) => (
-                  <span
-                    key={tag}
-                    className="rounded-full bg-[#e9f1f8] px-3 py-1.5 text-xs font-extrabold text-[#0e2a47]"
-                  >
-                    {tag}
-                  </span>
-                ))}
-              </div>
             </article>
           ))}
         </div>
-
       </div>
     </section>
   );
