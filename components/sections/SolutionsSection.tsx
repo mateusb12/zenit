@@ -1,5 +1,4 @@
 import { Badge } from "@/components/site/Badge";
-import { cardClass, cn } from "@/components/site/tailwind";
 import { solutions } from "@/data/landing";
 
 export function SolutionsSection() {
@@ -26,18 +25,15 @@ export function SolutionsSection() {
           {solutions.map((solution) => (
             <article
               key={solution.title}
-              className={cn(
-                cardClass,
-                "relative flex h-full min-h-[340px] flex-col overflow-hidden p-7 transition-[transform,box-shadow] duration-200 before:absolute before:inset-x-0 before:top-0 before:h-[5px] before:bg-[linear-gradient(90deg,#0e2a47,#3a6ea5)] before:content-[''] hover:-translate-y-0.5 hover:shadow-[0_18px_46px_rgba(7,26,46,0.14)] max-[680px]:min-h-[300px] max-[680px]:p-[22px]",
-              )}
+              className="relative flex h-full min-h-[340px] flex-col overflow-hidden rounded-[20px] border border-[#b9c8d8] bg-[#eef4fa] p-7 text-[#111111] shadow-[0_14px_34px_rgba(7,26,46,0.11)] transition-[transform,box-shadow,border-color] duration-200 before:absolute before:inset-x-0 before:top-0 before:h-[5px] before:bg-[linear-gradient(90deg,#0e2a47,#3a6ea5)] before:content-[''] hover:-translate-y-0.5 hover:border-[#94abc1] hover:shadow-[0_20px_48px_rgba(7,26,46,0.16)] max-[680px]:min-h-[300px] max-[680px]:p-[22px]"
             >
-              <span className="grid h-11 w-11 place-items-center rounded-[14px] bg-[#0e2a47] text-sm font-extrabold text-white">
+              <span className="grid h-11 w-11 place-items-center rounded-[14px] bg-[#0e2a47] text-sm font-extrabold text-white shadow-[0_10px_22px_rgba(14,42,71,0.22)]">
                 {solution.number}
               </span>
               <h3 className="mt-6 text-[23px] leading-[1.12] text-[#0e2a47]">
                 {solution.title}
               </h3>
-              <p className="mt-3 text-[15px] leading-[1.75] text-[#4b5563]">
+              <p className="mt-3 text-[15px] leading-[1.75] text-[#405063]">
                 {solution.description}
               </p>
             </article>
