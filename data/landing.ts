@@ -149,27 +149,28 @@ export const methodSteps: MethodStep[] = [
     step: "01",
     title: "Diagnóstico",
     description:
-      "Leitura inicial da empresa, requisitos aplicáveis, urgências, riscos e nível de maturidade.",
+      "Leitura inicial da empresa, documentos, processos e principais gaps.",
   },
   {
     step: "02",
-    title: "Estruturação",
+    title: "Planejamento",
     description:
-      "Definição de processos, documentos, controles, responsáveis e plano de ação.",
+      "Definição das prioridades, responsáveis, prazos e próximos passos.",
   },
   {
     step: "03",
     title: "Implantação",
     description:
-      "Acompanhamento digital, reuniões objetivas, materiais didáticos e treinamento da equipe quando necessário.",
+      "Organização dos documentos, registros, controles e evidências.",
   },
   {
     step: "04",
-    title: "Evidências e verificação",
+    title: "Evidências e Verificação",
     description:
-      "Organização de registros, revisão de lacunas e preparação para auditoria, certificação ou licitação.",
+      "Conferência do que foi implantado e preparação para auditoria, certificação ou licitação.",
   },
 ];
+
 
 export const diagnosticFacts = [
   ["Base", "Fortaleza · Ceará"],
