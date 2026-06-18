@@ -1,4 +1,4 @@
 export const buildInfo = {
-  version: "1.2.17",
-  updatedAtLabel: "15-jun-2026 at 13:55",
+  version: "1.2.18",
+  updatedAtLabel: "18-jun-2026 at 19:57",
 } as const;
