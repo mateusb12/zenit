@@ -133,6 +133,18 @@ export const solutions: Solution[] = [
   },
 ];
 
+export const trustedCompanies = [
+  "Loquicenter",
+  "BID",
+  "Teradela",
+  "Grupo RB",
+  "Casas Manager",
+  "Caltech",
+  "Cerbras",
+  "Cione",
+  "Construtora Sumaré",
+];
+
 export const segments: Segment[] = [
   "Construção civil",
   "Indústria",
