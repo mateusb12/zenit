@@ -1,7 +1,6 @@
 import { AuthoritySection } from "@/components/sections/AuthoritySection";
 import { ChallengesSection } from "@/components/sections/ChallengesSection";
 import { DiagnosticSection } from "@/components/sections/DiagnosticSection";
-import { ExperienceStripSection } from "@/components/sections/ExperienceStripSection";
 import { HeroSection } from "@/components/sections/HeroSection";
 import { MethodologySection } from "@/components/sections/MethodologySection";
 import { SolutionsSection } from "@/components/sections/SolutionsSection";
@@ -17,7 +16,6 @@ export default function Home() {
       <ChallengesSection />
       <SolutionsSection />
       <MethodologySection />
-      <ExperienceStripSection />
       <DiagnosticSection />
       <Footer />
     </main>

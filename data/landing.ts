@@ -133,18 +133,6 @@ export const solutions: Solution[] = [
   },
 ];
 
-export const trustedCompanies = [
-  "Loquicenter",
-  "BID",
-  "Teradela",
-  "Grupo RB",
-  "Casas Manager",
-  "Caltech",
-  "Cerbras",
-  "Cione",
-  "Construtora Sumaré",
-];
-
 export const segments: Segment[] = [
   "Construção civil",
   "Indústria",
@@ -185,10 +173,11 @@ export const methodSteps: MethodStep[] = [
 
 
 export const diagnosticFacts = [
-  ["Base", "Fortaleza · Ceará"],
-  ["Atendimento", "Digital, remoto e consultivo"],
-  ["Foco", "Integridade, PBQP-H, ISO 9001, auditoria e gestão auditável"],
+  ["Sede", "Fortaleza · Ceará"],
+  ["Como atuamos", "Digital, remoto e consultivo"],
+  ["Área de atuação", "Programa de Integridade, PBQP-H, ISO 9001 e Auditorias"],
 ];
+
 
 export const segmentOptions = [
   "Construção civil",

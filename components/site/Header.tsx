@@ -3,6 +3,7 @@ import { VersionInfoButton } from "@/components/site/VersionInfoButton";
 import { containerClass } from "@/components/site/tailwind";
 import { whatsappHref } from "@/data/landing";
 import { publicAssetPath } from "@/data/siteAssets";
+import { DevNavbarHider } from "@/components/site/DevNavbarHider";
 
 export function Header() {
   return (
@@ -29,6 +30,7 @@ export function Header() {
         <HeaderNav />
 
         <div className="flex min-w-max items-center gap-2">
+          <DevNavbarHider />
           <a
             href={whatsappHref}
             target="_blank"
