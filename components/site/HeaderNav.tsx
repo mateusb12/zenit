@@ -73,6 +73,11 @@ export function HeaderNav() {
           <a
             key={item.href}
             href={item.href}
+            data-analytics-event="cta_click"
+            data-analytics-cta-id={`nav_${item.href.replace("#", "")}`}
+            data-analytics-location="header"
+            data-analytics-label={item.label}
+            data-analytics-target={item.href}
             className={cn(
               "relative px-[9px] py-2 transition-colors duration-200 hover:text-white",
               isActive &&

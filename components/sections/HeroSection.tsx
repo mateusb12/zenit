@@ -61,12 +61,24 @@ export function HeroSection() { return (
             </p>
 
             <div className="mt-9 flex flex-wrap gap-3 max-[680px]:flex-col max-[680px]:items-stretch">
-              <ButtonLink href="#diagnostico">Solicitar diagnóstico</ButtonLink>
+              <ButtonLink
+                href="#diagnostico"
+                data-analytics-event="cta_click"
+                data-analytics-cta-id="hero_diagnostic"
+                data-analytics-location="hero"
+                data-analytics-label="Solicitar diagnóstico"
+                data-analytics-target="#diagnostico"
+              >
+                Solicitar diagnóstico
+              </ButtonLink>
               <ButtonLink
                 href={whatsappHref}
                 target="_blank"
                 rel="noopener noreferrer"
                 variant="whatsapp"
+                data-analytics-event="whatsapp_click"
+                data-analytics-location="hero"
+                data-analytics-label="WhatsApp"
               >
                 WhatsApp
               </ButtonLink>

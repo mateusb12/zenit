@@ -12,6 +12,11 @@ export function Header() {
         <a
           href="#inicio"
           aria-label="ZÊNIT Consult"
+          data-analytics-event="cta_click"
+          data-analytics-cta-id="nav_inicio_logo"
+          data-analytics-location="header"
+          data-analytics-label="ZÊNIT Consult"
+          data-analytics-target="#inicio"
           className="inline-flex min-w-max items-center gap-3 text-white"
         >
           <span className="grid h-[42px] w-[42px] place-items-center rounded-[14px] border border-white/20 bg-[linear-gradient(135deg,rgba(255,255,255,0.18),rgba(58,110,165,0.58))] text-lg font-extrabold shadow-[0_14px_30px_rgba(58,110,165,0.24)]">
@@ -37,6 +42,9 @@ export function Header() {
             rel="noopener noreferrer"
             aria-label="WhatsApp da ZÊNIT"
             title="WhatsApp"
+            data-analytics-event="whatsapp_click"
+            data-analytics-location="header"
+            data-analytics-label="WhatsApp"
             className="inline-flex min-h-10 items-center justify-center gap-2 rounded-full border border-[#25d366]/28 bg-white/[0.06] px-3 py-2 text-sm font-extrabold text-white transition-[transform,background,border-color,filter] duration-200 hover:-translate-y-0.5 hover:border-[#25d366]/45 hover:bg-white/[0.10] hover:text-white hover:brightness-110 focus:outline-none focus:ring-2 focus:ring-[#25d366]/35 max-[680px]:h-10 max-[680px]:w-10 max-[680px]:px-0"
           >
             <span className="max-[680px]:sr-only">WhatsApp</span>

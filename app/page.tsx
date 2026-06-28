@@ -6,10 +6,12 @@ import { MethodologySection } from "@/components/sections/MethodologySection";
 import { SolutionsSection } from "@/components/sections/SolutionsSection";
 import { Footer } from "@/components/site/Footer";
 import { Header } from "@/components/site/Header";
+import { LandingEngagementTracker } from "@/components/analytics/LandingEngagementTracker";
 
 export default function Home() {
   return (
     <main className="min-h-screen overflow-x-hidden bg-white text-[#111111] [&_h1]:font-extrabold [&_h1]:leading-[1.12] [&_h1]:tracking-normal [&_h2]:font-extrabold [&_h2]:leading-[1.12] [&_h2]:tracking-normal [&_h3]:font-extrabold [&_h3]:leading-[1.12] [&_h3]:tracking-normal">
+      <LandingEngagementTracker />
       <Header />
       <HeroSection />
       <AuthoritySection />
