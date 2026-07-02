@@ -141,14 +141,14 @@ export function LandingEngagementTracker() {
       }
 
       const formData = new FormData(form);
-      const segment = formData.get("segmento");
       const need = formData.get("necessidade");
+      const company = formData.get("empresa");
 
       trackLandingEvent("diagnostic_form_submit", {
         form_name: "diagnostic",
         location: "diagnostic",
-        segment: typeof segment === "string" ? segment : undefined,
         need: typeof need === "string" ? need : undefined,
+        has_company: typeof company === "string" && company.trim().length > 0,
       });
     };
 
